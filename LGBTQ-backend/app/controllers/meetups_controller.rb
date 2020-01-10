@@ -1,20 +1,20 @@
 class MeetupsController < ApplicationController
   def index
-    @meetups = User.all
+    @meetups = Meetup.all
     render json: @meetups
   end
 
   def create
-    @meetup = User.new(meetup_params)
+    @meetup = Meetup.new(meetup_params)
   end
 
   def show
-    @meetup = User.find(params[:id])
+    @meetup = Meetup.find(params[:id])
     render json: @meetup
   end
 
   def update
-    @meetup = User.find(params[:id])
+    @meetup = Meetup.find(params[:id])
     render json: @meetup
   end
 

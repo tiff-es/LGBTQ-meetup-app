@@ -13,3 +13,4 @@ Meetup.destroy_all
 u1 = User.create_or_find_by(name: 'tiff', picture: 'test', pronouns: 'she/her')
 c1 = Category.create_or_find_by(category: 'trans')
 m1 = Meetup.create_or_find_by(category_id: c1.id, location: 'Alexandria,VA', date: Date.new, time: Time.new)
+# Date.new and Time.new is making test data, not accurate time data
