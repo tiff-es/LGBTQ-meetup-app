@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_01_10_040016) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string "category"
     t.datetime "created_at", precision: 6, null: false
@@ -38,8 +41,8 @@ ActiveRecord::Schema.define(version: 2020_01_10_040016) do
   end
 
   create_table "users_meetups", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "meetup_id"
+    t.bigint "user_id"
+    t.bigint "meetup_id"
     t.index ["meetup_id"], name: "index_users_meetups_on_meetup_id"
     t.index ["user_id"], name: "index_users_meetups_on_user_id"
   end

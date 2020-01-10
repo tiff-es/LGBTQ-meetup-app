@@ -1,3 +1,4 @@
 class Category < ApplicationRecord
-  has_one :meetup
+  has_many :meetups
+
 end
