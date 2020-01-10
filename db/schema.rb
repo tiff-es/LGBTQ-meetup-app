@@ -14,18 +14,16 @@ ActiveRecord::Schema.define(version: 2020_01_10_040016) do
 
   create_table "categories", force: :cascade do |t|
     t.string "category"
-    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "meetups", force: :cascade do |t|
     t.string "location"
-    t.integer "category_id"
     t.time "time"
     t.date "date"
     t.text "info"
-    t.integer "meetup_id"
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -34,7 +32,6 @@ ActiveRecord::Schema.define(version: 2020_01_10_040016) do
     t.string "name"
     t.string "picture"
     t.text "bio"
-    t.integer "user_id"
     t.string "pronouns"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
