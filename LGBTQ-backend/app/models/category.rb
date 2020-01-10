@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  belongs_to :meetup
+  has_one :meetup
 end
