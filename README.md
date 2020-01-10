@@ -7,7 +7,7 @@
   * Finally, a safe space for the LGBTQ+ community to create and find social meetups with gender affirming, supportive people near you!
   
 ---
-##Technologies Used: 
+## Technologies Used: 
 ### Front-end:
 #### JavaScript Frameworks:
 * React
