@@ -15,8 +15,9 @@
 #### CSS Frameworks:
 * (None yet)
  
- 
- 
+#### Node Packages Installed
+* [react-mapbox-gl](https://alex3165.github.io/react-mapbox-gl/)
+      * React binding of mapbox-gl-js
 ---
 ### Backend:
 * Rails (6.0.2.1)

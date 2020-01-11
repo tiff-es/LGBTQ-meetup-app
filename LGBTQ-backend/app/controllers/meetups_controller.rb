@@ -23,4 +23,8 @@ class MeetupsController < ApplicationController
   def meetup_params
     params.permit(:location, :category_id, :time, :date, :info )
   end
+
+  # def request_mapbox
+  #
+  # end
 end
