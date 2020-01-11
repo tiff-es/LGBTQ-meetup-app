@@ -1,3 +1,4 @@
+require 'mapbox-sdk'
 class Meetup < ApplicationRecord
   has_one :category
   has_many :users_meetups

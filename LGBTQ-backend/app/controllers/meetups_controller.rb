@@ -6,6 +6,7 @@ class MeetupsController < ApplicationController
 
   def create
     @meetup = Meetup.new(meetup_params)
+    render json: meetup
   end
 
   def show

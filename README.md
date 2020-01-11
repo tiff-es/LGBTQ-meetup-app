@@ -21,10 +21,10 @@
 ### Backend:
 * Rails (6.0.2.1)
 * PostgreSQL
-* MapBox API
+* [MapBox-SDK-Ruby](https://github.com/mapbox/mapbox-sdk-rb)
 
 #### Gem Dependencies:
-
+  * mapbox-sdk
   * bootsnap (>= 1.4.2)
  * byebug
   * listen (>= 3.0.5, < 3.2)
