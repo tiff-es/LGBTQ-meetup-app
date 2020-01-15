@@ -1,6 +1,11 @@
 import React from "react";
 import NavBar from "./NavBar";
 import {connect} from "react-redux";
+import addUser from '../actions/user'
+import 'bootstrap/dist/css/bootstrap.css';
+import {FormGroup} from "react-bootstrap";
+import Button from "@material-ui/core/Button";
+import {Form} from "react-bootstrap";
 
 class CreateAccount extends React.Component{
 
@@ -17,30 +22,27 @@ class CreateAccount extends React.Component{
         event.preventDefault();
         this.props.dispatch({type: 'ADD_USER', user: this.state})
     }
+    //wire up mapDispatchToProps
 
     render() {
         return(
             <div>
                 Create Account
-                <form onSubmit={this.handleOnSubmit}>
-                    <p>
-                        <input
-                            type="text"
-                            id="username"
-                            onChange={this.handleInputChange}
-                            placeholder="username"
-                        />
-                    </p>
-                    <p>
-                        <input
-                            type="text"
-                            id="password"
-                            onChange={this.handleInputChange}
-                            placeholder="password"
-                        />
-                    </p>
-                    <input type="submit" />
-                </form>
+                <Form onSubmit={this.handleOnSubmit}>
+
+                    <Form.Group onChange={this.handleInputChange} controlId="formBasicUsername">
+                        <Form.Label>Username</Form.Label>
+                        <Form.Control id='username' type="text" placeholder="Create Username" />
+                    </Form.Group>
+
+
+                    <Form.Group onChange={this.handleInputChange} controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control id='password' type="password" placeholder="Create Password" />
+                    </Form.Group>
+
+                    <Button variant='primary' className='submitButton' action={addUser()} type="submit"> Submit </Button>
+                </Form>
             </div>
 
 
@@ -50,7 +52,14 @@ class CreateAccount extends React.Component{
 
 let mapStateToProps = (state) => {
     return {user: {password: state.password,
-    username: state.username}}
+            username: state.username}}
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        user: () => {
+            dispatch(addUser)
+        }
+    }
 }
 
 export default connect(mapStateToProps)(CreateAccount)
