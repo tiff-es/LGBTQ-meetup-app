@@ -23,12 +23,6 @@
 * [react-bootstrap](https://react-bootstrap.github.io/)
 * [Material UI](https://material-ui.com/)
 * [react-router-redux](https://github.com/reactjs/react-router-redux)
-# 
----
-### Backend:
-* Rails (6.0.2.1)
-* PostgreSQL
-* [MapBox-SDK-Ruby](https://github.com/mapbox/mapbox-sdk-rb)
 #### JavaScript Dependencies
 * @material-ui/core: ^4.8.3,
 * @material-ui/styles: ^4.8.2,
@@ -49,6 +43,14 @@
 * react-scripts: 3.3.0,
 * redux: ^4.0.5,
 * semantic: 0.0.1
+
+---
+
+### Backend:
+* Rails (6.0.2.1)
+* PostgreSQL
+* [MapBox-SDK-Ruby](https://github.com/mapbox/mapbox-sdk-rb)
+
 
 #### Gem Dependencies:
   * mapbox-sdk
