@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "./NavBar";
 import {connect} from "react-redux";
-import addUser from '../actions/user'
+import {addUser} from '../actions/user'
 import 'bootstrap/dist/css/bootstrap.css';
 import {FormGroup} from "react-bootstrap";
 import Button from "@material-ui/core/Button";

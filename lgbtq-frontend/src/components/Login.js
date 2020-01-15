@@ -3,23 +3,25 @@ import {Toolbar, Button, GridList, BottomNavigation} from "@material-ui/core";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import {Form} from "react-bootstrap";
-import addUser from "../actions/user";
-import login from '../actions/login'
+import {login} from '../actions/login'
+
+
 class Login extends React.Component{
     state = {
-        username: '',
-        password: '',
+     username: '',
+        password: ''
     }
     handleInputChange = (event) => {
         this.setState({
             [event.target.id]: event.target.value
-        });
+        } );
     }
 
-    handleOnSubmit = (event) => {
+     handleOnSubmit = (event) => {
         event.preventDefault();
-        this.props.dispatch({type: 'LOGIN', currentUser: this.state})
-    }
+
+         this.props.dispatch({type: 'LOGIN', currentUser: {username: this.state.username, password: this.state.username}})    }
+
     //wire up mapDispatchToProps
     render() {
         return(
@@ -38,7 +40,7 @@ class Login extends React.Component{
                         <Form.Control id='password' type="password" placeholder="Password" />
                     </Form.Group>
 
-                    <Button variant='primary' className='submitButton' action={login()} type="submit"> Submit </Button>
+                    <Button variant='primary' className='submitButton' type='submit'> Submit </Button>
                 </Form>
             </div>
 
@@ -51,18 +53,18 @@ class Login extends React.Component{
 
 const mapStateToProps = (state) => {
     return {
-        user:{
+        currentUser:{
         username: state.username,
         password: state.password }
     }
 }
-
 // const mapDispatchToProps = (dispatch) => {
 //     return {
-//         user: () => {
-//             dispatch(addUser)
+//         login: (state) => {
+//             dispatch(login())
 //         }
-//     }
+//     };
 // }
+//
 
 export default connect(mapStateToProps)(Login)

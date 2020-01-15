@@ -13,12 +13,11 @@ export default function manageUsers(state = {
                 users: [...state.users, action.user]
             }
         case 'LOGIN':
-            console.log('current user: ', action.currentUser);
-            return {
-                ...state,
-                currentUser: [...state.users, action.currentUser]
-            }
-
+            console.log(state.currentUser, state.currentUser.username);
+            return Object.assign({}, {
+                currentUser: {username:  state.currentUser.username,
+                password: state.currentUser.password}
+            });
         default:
             return state;
     }
