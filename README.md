@@ -19,7 +19,7 @@
 * Semantic
 #### Node Packages Installed
 * [react-mapbox-gl](https://alex3165.github.io/react-mapbox-gl/)
-      * React binding of mapbox-gl-js
+    * React binding of mapbox-gl-js
 * [react-bootstrap](https://react-bootstrap.github.io/)
 * [Material UI](https://material-ui.com/)
 * [react-router-redux](https://github.com/reactjs/react-router-redux)
