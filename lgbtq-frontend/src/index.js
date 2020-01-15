@@ -6,9 +6,11 @@ import * as serviceWorker from './serviceWorker';
 import {createStore,applyMiddleware,combineReducers} from 'redux'
 import {Provider, connect} from "react-redux";
 import testReducer from "./reducers/testReducer";
+import userReducer  from "./reducers/userReducer";
+
 
 const store = createStore(
-    testReducer,
+    userReducer,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

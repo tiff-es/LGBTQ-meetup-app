@@ -14,7 +14,7 @@ export default class NavBar extends Component {
             <Toolbar className='navbar-dark'>
 
                 <NavLink to="/"><Button>Home</Button></NavLink>
-
+                <NavLink to="/createaccount"><Button>Create Account</Button></NavLink>
                 <NavLink to="/login"><Button>Login</Button></NavLink>
 
             </Toolbar>

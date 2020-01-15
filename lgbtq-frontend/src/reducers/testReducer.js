@@ -1,5 +1,9 @@
 export default function testReducer(state = {
-    testArray: []
+    testArray: [],
+    user: {
+        username: '',
+        password: ''
+    }
 }, action) {
     console.log(action);
     switch(action.type) {

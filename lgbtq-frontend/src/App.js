@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import createHistory from "history/createBrowserHistory";
 import Home from "./components/Home";
+import CreateAccount from "./components/CreateAccount";
 
 const Map = ReactMapboxGl({
   accessToken: "pk.eyJ1IjoidGlmZmFueWFicmFoYW0iLCJhIjoiY2s1N2x6MnRpMDU3MjNscHMxdGRhcTZ6NiJ9.7D9NUZEVIS2O86VocLUXPQ\n.p6GGlfyV-WksaDV_KdN27A",})
@@ -21,7 +22,9 @@ function App() {
           <div>
               <NavBar/>
               <Switch>
+
                   <Route exact path="/" component={Home} />
+                  <Route path="/createaccount" component={CreateAccount} />
                   <Route path="/login" component={Login} />
                   <Route path="/*" component={() => 'NOT FOUND'} />
               </Switch>
@@ -31,6 +34,6 @@ function App() {
 
  }
 const mapStateToProps = (state) => {
-    return { testArray: state.testArray }
+    return {user: state.user}
 }
 export default connect(mapStateToProps)(App);
