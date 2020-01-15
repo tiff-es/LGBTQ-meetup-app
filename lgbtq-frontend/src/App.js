@@ -14,26 +14,7 @@ const Map = ReactMapboxGl({
   accessToken: "pk.eyJ1IjoidGlmZmFueWFicmFoYW0iLCJhIjoiY2s1N2x6MnRpMDU3MjNscHMxdGRhcTZ6NiJ9.7D9NUZEVIS2O86VocLUXPQ\n.p6GGlfyV-WksaDV_KdN27A",})
 function App() {
   return (
-
-          <div>
-              <Toolbar>
-
-                          <NavLink to="/"><Button>Home</Button></NavLink>
-                          <NavLink to="/login"><Button>Login</Button></NavLink>
-
-
-              </Toolbar>
-
-              <Switch>
-                  <Route path="/">
-                      <Home/>
-                  </Route>
-                  <Route path="/Login">
-                      <Login/>
-                  </Route>
-
-              </Switch>
-          </div>
+      <Home/>
 
 )
 

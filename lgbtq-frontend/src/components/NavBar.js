@@ -1,21 +1,26 @@
 import React, {Component} from "react";
-import {Toolbar,ButtonGroup} from "@material-ui/core";
-import {Route, NavLink, Link, BrowserRouter} from "react-router-dom";
-import Button from "@material-ui/core/Button"
-import AppBar from "@material-ui/core/AppBar";
+import {Toolbar, ButtonGroup, MenuList, GridListTileBar, CardHeader, TableHead} from "@material-ui/core";
+import {Route, NavLink, Link,Switch, BrowserRouter as Router} from "react-router-dom";
+import {Button, AppBar} from "@material-ui/core/"
 import Home from "./Home";
 import Login from "./Login";
-// import Switch from "@material-ui/core/Switch";
-// import Menu from "@material-ui/core/Menu";
-// export default class NavBar extends Component {
-//
-//     render(){
-//         return(
-//
-//
-//
-//
-//
-//         )
-//     }
-// }
+import Menu from "@material-ui/core/Menu";
+import App from "../App";
+
+export default class NavBar extends Component {
+
+    render(){
+        return(
+            <Toolbar className='navbar-dark'>
+
+                <NavLink to="/"><Button>Home</Button></NavLink>
+
+                <NavLink to="/login"><Button>Login</Button></NavLink>
+
+            </Toolbar>
+
+
+
+        )
+    }
+}
