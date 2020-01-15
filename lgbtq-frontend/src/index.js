@@ -5,9 +5,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {createStore,applyMiddleware,combineReducers} from 'redux'
 import {Provider, connect} from "react-redux";
-import testReducer from "./reducers/testReducer";
 import userReducer  from "./reducers/userReducer";
-
+import 'bootstrap/dist/css/bootstrap.css';
 
 const store = createStore(
     userReducer,

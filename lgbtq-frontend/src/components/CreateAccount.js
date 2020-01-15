@@ -48,4 +48,9 @@ class CreateAccount extends React.Component{
 
 }
 
-export default connect()(CreateAccount)
+let mapStateToProps = (state) => {
+    return {user: {password: state.password,
+    username: state.username}}
+}
+
+export default connect(mapStateToProps)(CreateAccount)

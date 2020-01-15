@@ -13,16 +13,42 @@
 * React
 * Redux
 #### CSS Frameworks:
-* (None yet)
- 
+* Material UI
+* Bootstrap
+  * React-Bootstrap
+* Semantic
 #### Node Packages Installed
 * [react-mapbox-gl](https://alex3165.github.io/react-mapbox-gl/)
       * React binding of mapbox-gl-js
+* [react-bootstrap](https://react-bootstrap.github.io/)
+* [Material UI](https://material-ui.com/)
+* [react-router-redux](https://github.com/reactjs/react-router-redux)
+# 
 ---
 ### Backend:
 * Rails (6.0.2.1)
 * PostgreSQL
 * [MapBox-SDK-Ruby](https://github.com/mapbox/mapbox-sdk-rb)
+#### JavaScript Dependencies
+* @material-ui/core: ^4.8.3,
+* @material-ui/styles: ^4.8.2,
+* @testing-library/jest-dom: ^4.2.4,
+* @testing-library/react: ^9.3.2,
+* @testing-library/user-event: ^7.1.2,
+* bootstrap: ^4.4.1,
+*  history: latest,
+* mapbox-gl: ^1.6.1,
+* prop-types: latest,
+* react: ^16.12.0,
+*  react-bootstrap: ^1.0.0-beta.16,
+* react-dom: ^16.12.0,
+* react-mapbox-gl: ^4.8.2,
+* react-router: latest,
+* react-router-bootstrap: ^0.25.0,
+* react-router-redux: ^4.0.8,
+* react-scripts: 3.3.0,
+* redux: ^4.0.5,
+* semantic: 0.0.1
 
 #### Gem Dependencies:
   * mapbox-sdk
