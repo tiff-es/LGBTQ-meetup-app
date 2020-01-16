@@ -1,5 +1,5 @@
- const addUser = () => {
-    return { type: 'ADD_USER' }
+ const addUser = (user) => {
+    return { type: 'ADD_USER', user }
 };
  export {addUser}
 

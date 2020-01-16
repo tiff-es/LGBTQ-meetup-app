@@ -14,10 +14,9 @@ export default function manageUsers(state = {
             }
         case 'LOGIN':
             console.log(state.currentUser, state.currentUser.username);
-            return Object.assign({}, {
-                currentUser: {username:  state.currentUser.username,
-                password: state.currentUser.password}
-            });
+            return {
+                ...state, currentUser: action.currentUser
+            };
         default:
             return state;
     }

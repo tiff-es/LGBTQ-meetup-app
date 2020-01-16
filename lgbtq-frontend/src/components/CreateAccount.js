@@ -18,10 +18,13 @@ class CreateAccount extends React.Component{
             [event.target.id]: event.target.value
         });
     }
+
     handleOnSubmit = (event) => {
         event.preventDefault();
-        this.props.dispatch({type: 'ADD_USER', user: this.state})
+        this.props.addUser(this.state)
+        // this.props.dispatch({type: 'LOGIN', currentUser: {username: this.state.username, password: this.state.username}})    }
     }
+
     //wire up mapDispatchToProps
 
     render() {
@@ -56,10 +59,10 @@ let mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        user: () => {
-            dispatch(addUser)
+        addUser: (user) => {
+            dispatch(addUser(user))
         }
     }
 }
 
-export default connect(mapStateToProps)(CreateAccount)
+export default connect(mapStateToProps, mapDispatchToProps)(CreateAccount)
