@@ -4,10 +4,10 @@ import { connect } from 'react-redux'
 import { addUser, getUsers } from '../actions/user'
 
 class Users extends React.Component {
-
-    state = {
-        users: []
-    }
+    //
+    // state = {
+    //     users: []
+    // }
     getUsers(){
         axios.get('http://localhost:3000/users')
             .then(response => {
@@ -31,6 +31,9 @@ class Users extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
+
+
+      ...state,
       users: state.users
   }
 }

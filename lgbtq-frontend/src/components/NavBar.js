@@ -10,7 +10,7 @@ export default class NavBar extends Component {
 
     render(){
         return(
-            <Navbar className='top-nav'>
+            <Navbar id='navbar' className='top-nav'>
 
                 <NavLink to="/"><Button className='navbar-btn'><div className='nav-link'>Home</div></Button></NavLink>
                 <NavLink to="/createaccount"><Button className='navbar-btn'><div className='nav-link'>Create Account</div></Button></NavLink>

@@ -8,10 +8,10 @@ import {login} from '../actions/login'
 
 
 class Login extends React.Component{
-    state = {
-     username: '',
-        password: ''
-    }
+    // state = {
+    //  username: '',
+    //     password: '',
+    // }
     handleInputChange = (event) => {
         this.setState({
             [event.target.id]: event.target.value
@@ -61,8 +61,12 @@ this.props.login(this.state)
 const mapStateToProps = (state) => {
     return {
         currentUser:{
-        username: state.username,
-        password: state.password }
+            password: state.password,
+            username: state.username,
+            name: state.name,
+            picture: state.picture,
+            bio: state.bio,
+            pronouns: state.pronouns }
     }
 }
 const mapDispatchToProps = (dispatch) => {

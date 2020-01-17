@@ -3,16 +3,17 @@ import NavBar from "./NavBar";
 import {connect} from "react-redux";
 import {addUser} from '../actions/user'
 import 'bootstrap/dist/css/bootstrap.css';
-import {FormGroup} from "react-bootstrap";
+import {FormGroup, FormText} from "react-bootstrap";
 import Button from "@material-ui/core/Button";
 import {Form} from "react-bootstrap";
+import {CardBody, CardText} from "react-bootstrap/Card";
 
 class CreateAccount extends React.Component{
 
-    state = {
-        username: '',
-        password: '',
-    }
+    // state = {
+    //     username: '',
+    //     password: '',
+    // }
     handleInputChange = (event) => {
         this.setState({
             [event.target.id]: event.target.value
@@ -43,6 +44,32 @@ class CreateAccount extends React.Component{
                         <Form.Label id='create-account form-label password'>Password</Form.Label>
                         <Form.Control id='password' type="password" placeholder="Create Password" />
                     </Form.Group>
+<br/>
+                    <FormText id='create-account form-text'><h5 id='create-account tell-us-about-yourself text'>Tell Us About Yourself!</h5></FormText>
+
+                    <Form.Group id='create-account form-group name' onChange={this.handleInputChange} controlId="formBasicName">
+                        <Form.Label id='create-account form-label name'>Name</Form.Label>
+                        <Form.Control id='name' type="text" placeholder="Enter Preferred Name" />
+                    </Form.Group>
+
+                    <Form.Group id='create-account form-group bio' onChange={this.handleInputChange} controlId="formBasicBio">
+                        <Form.Label id='create-account form-label Bio'>Bio</Form.Label>
+                        <Form.Control id='bio' type="text" placeholder="Tell Us About Yourself!" />
+                    </Form.Group>
+
+                    <Form.Group id='create-account form-group pic-url' onChange={this.handleInputChange} controlId="formBasicPicture">
+                        <Form.Label id='create-account form-label pic-url'>Profile Picture</Form.Label>
+                        <Form.Control id='picture' type="text" placeholder="Enter an image URL for your profile picture" />
+                    </Form.Group>
+
+                    <Form.Group id='create-account form-group pronouns' onChange={this.handleInputChange} controlId="formBasicPronouns">
+                        <Form.Label id='create-account form-label pronouns'>Preferred Pronouns</Form.Label>
+                        <Form.Control id='pronouns' type="text" placeholder="What are your preferred pronouns?" />
+                    </Form.Group>
+
+
+
+
 
                     <Button id='create-account submit-btn' variant='primary' className='submitButton' action={addUser()} type="submit"> Submit </Button>
                 </Form>
@@ -54,13 +81,19 @@ class CreateAccount extends React.Component{
 }
 
 let mapStateToProps = (state) => {
-    return {user: {password: state.password,
-            username: state.username}}
+    return {newUser: {password: state.password,
+        username: state.username,
+            name: state.name,
+            picture: state.picture,
+            bio: state.bio,
+            pronouns: state.pronouns
+
+        }}
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        addUser: (user) => {
-            dispatch(addUser(user))
+        addUser: (newUser) => {
+            dispatch(addUser(newUser))
         }
     }
 }

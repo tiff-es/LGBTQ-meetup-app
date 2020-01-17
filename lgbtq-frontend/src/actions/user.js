@@ -1,7 +1,7 @@
 import {ADD_USER, GET_USERS} from "./actionTypes";
 
-const addUser = (user) => {
-    return { type: ADD_USER, id:user.id, user: user }
+const addUser = (newUser) => {
+    return { type: ADD_USER, newUser: newUser }
 };
  export {addUser}
 

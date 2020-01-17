@@ -1,26 +1,35 @@
-import {ADD_USER, GET_USERS} from "../actions/actionTypes";
+import {ADD_USER, GET_USERS, LOGIN} from "../actions/actionTypes";
 
 export default function manageUsers(state = {
     users: [],
     currentUser: {
         username: '',
-        password: ''
+        password: '',
+        name: '',
+        picture: '',
+        bio: '',
+        pronouns: ''
+
+    },
+    newUser: {
+        username: '',
+        password: '',
+        name: '',
+        picture: '',
+        bio: '',
+        pronouns: ''
+
     }
 }, action){
     switch (action.type) {
         case GET_USERS:
-            return state.users, action.users
+            return {...state, users: action.users}
         case  ADD_USER:
-            return [
-                ...state,
-                {
-                    id: action.id,
-                    user: action.user,
+            return {
+                   ...state, newUser: action.newUser
                 }
-            ];
 
-        case 'LOGIN':
-            console.log(state.currentUser, state.currentUser.username);
+        case LOGIN:
             return {
                 ...state, currentUser: action.currentUser
             }
