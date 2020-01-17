@@ -7,15 +7,16 @@ import {createStore,applyMiddleware,combineReducers} from 'redux'
 import {Provider, connect} from "react-redux";
 import userReducer  from "./reducers/userReducer";
 import 'bootstrap/dist/css/bootstrap.css';
+import thunk from 'redux-thunk';
+import {composeWithDevTools} from 'redux-devtools-extension'
 
 const store = createStore(
-    userReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    userReducer,composeWithDevTools( applyMiddleware(thunk))
 );
 
 ReactDOM.render(
     <Provider store={store}>
-        <App/>
+        <App store={store}/>
     </Provider>,
     document.getElementById("root")
 );

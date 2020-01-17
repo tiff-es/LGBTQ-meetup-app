@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root 'static#index'
+  namespace :api, defaults: {format: 'json'} do
+    get 'users', to: 'users#index'
+  end
   resources :users
   resources :categories
   resources :meetups

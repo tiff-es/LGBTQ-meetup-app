@@ -6,6 +6,7 @@ import {Form} from "react-bootstrap";
 import {login} from '../actions/login'
 
 
+
 class Login extends React.Component{
     state = {
      username: '',
@@ -48,12 +49,18 @@ this.props.login(this.state)
       )
 
     }
+
+
 }
 
 
+// const structuredSelector = createStructuredSelector({
+//     users: state => state.users
+// })
+
 const mapStateToProps = (state) => {
     return {
-        currentUser:{
+        users:{
         username: state.username,
         password: state.password }
     }
@@ -67,4 +74,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+
+
+export default connect(mapStateToProps,  mapDispatchToProps)(Login)

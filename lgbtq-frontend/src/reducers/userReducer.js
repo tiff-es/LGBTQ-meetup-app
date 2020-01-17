@@ -16,7 +16,11 @@ export default function manageUsers(state = {
             console.log(state.currentUser, state.currentUser.username);
             return {
                 ...state, currentUser: action.currentUser
-            };
+            }
+        case 'GET_USERS_REQUEST':
+            console.log('getting users')
+        case 'GET_USERS_SUCCESS':
+            return  {...state , users: action.users}
         default:
             return state;
     }
