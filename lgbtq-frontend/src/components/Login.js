@@ -26,22 +26,22 @@ this.props.login(this.state)
     //wire up mapDispatchToProps
     render() {
         return(
-            <div>
-                Login
-                <Form onSubmit={this.handleOnSubmit}>
+            <div id='login main-container' className='modal-body'>
+               <h2 id='login-header' className='header-raised'> Login</h2>
+                <Form id='login form' onSubmit={this.handleOnSubmit}>
 
-                    <Form.Group onChange={this.handleInputChange} controlId="formBasicUsername">
-                        <Form.Label>Username</Form.Label>
+                    <Form.Group id='login form-group username'onChange={this.handleInputChange} controlId="formBasicUsername">
+                        <Form.Label id='login form-label username'>Username</Form.Label>
                         <Form.Control id='username' type="text" placeholder="Username" />
                     </Form.Group>
 
 
-                    <Form.Group onChange={this.handleInputChange} controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
+                    <Form.Group id='login form-group password' onChange={this.handleInputChange} controlId="formBasicPassword">
+                        <Form.Label id='login form-label password'>Password</Form.Label>
                         <Form.Control id='password' type="password" placeholder="Password" />
                     </Form.Group>
 
-                    <Button variant='primary' className='submitButton' type='submit'> Submit </Button>
+                    <Button id='login submit-btn' variant='primary' className='submitButton' type='submit'> Submit </Button>
                 </Form>
             </div>
 
@@ -60,7 +60,7 @@ this.props.login(this.state)
 
 const mapStateToProps = (state) => {
     return {
-        users:{
+        currentUser:{
         username: state.username,
         password: state.password }
     }

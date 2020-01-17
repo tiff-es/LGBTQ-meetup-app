@@ -29,22 +29,22 @@ class CreateAccount extends React.Component{
 
     render() {
         return(
-            <div>
-                Create Account
-                <Form onSubmit={this.handleOnSubmit}>
+            <div id='create-account main-container' className='modal-body'>
+                <h2 id='create-account header 'className='header-raised'>Create Account</h2>
+                <Form id='create-account form'onSubmit={this.handleOnSubmit}>
 
-                    <Form.Group onChange={this.handleInputChange} controlId="formBasicUsername">
-                        <Form.Label>Username</Form.Label>
+                    <Form.Group id='create-account form-group username'onChange={this.handleInputChange} controlId="formBasicUsername">
+                        <Form.Label id='create-account form-label username'>Username</Form.Label>
                         <Form.Control id='username' type="text" placeholder="Create Username" />
                     </Form.Group>
 
 
-                    <Form.Group onChange={this.handleInputChange} controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
+                    <Form.Group id='create-account form-group password' onChange={this.handleInputChange} controlId="formBasicPassword">
+                        <Form.Label id='create-account form-label password'>Password</Form.Label>
                         <Form.Control id='password' type="password" placeholder="Create Password" />
                     </Form.Group>
 
-                    <Button variant='primary' className='submitButton' action={addUser()} type="submit"> Submit </Button>
+                    <Button id='create-account submit-btn' variant='primary' className='submitButton' action={addUser()} type="submit"> Submit </Button>
                 </Form>
             </div>
 
