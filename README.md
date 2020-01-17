@@ -17,7 +17,9 @@
 * Bootstrap
   * React-Bootstrap
 * Semantic
-#### Node Packages Installed:
+#### Node Packages and Dependencies Installed:
+* Redux Thunk
+* Axios
 * [react-mapbox-gl](https://alex3165.github.io/react-mapbox-gl/)
     * React binding of mapbox-gl-js
 * [react-bootstrap](https://react-bootstrap.github.io/)

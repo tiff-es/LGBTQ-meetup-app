@@ -9,6 +9,7 @@ import createHistory from "history/createBrowserHistory";
 import Home from "./components/Home";
 import CreateAccount from "./components/CreateAccount";
 import NavBar from "./components/NavBar"
+import Users from "./components/Users";
 
 
 const Map = ReactMapboxGl({
@@ -25,6 +26,7 @@ function App() {
                   <Route exact path="/" component={Home} />
                   <Route path="/createaccount" component={CreateAccount} />
                   <Route path="/login" component={Login} />
+               <Route path='/users' component={Users}/>
                   <Route path="/*" component={() => 'NOT FOUND'} />
               </Switch>
           </div>
