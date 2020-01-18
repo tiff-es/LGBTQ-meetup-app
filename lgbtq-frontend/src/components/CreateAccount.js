@@ -7,6 +7,7 @@ import {FormGroup, FormText} from "react-bootstrap";
 import Button from "@material-ui/core/Button";
 import {Form} from "react-bootstrap";
 import {CardBody, CardText} from "react-bootstrap/Card";
+import {AxiosInstance as axios} from "axios";
 
 class CreateAccount extends React.Component{
 
@@ -18,6 +19,17 @@ class CreateAccount extends React.Component{
         this.setState({
             [event.target.id]: event.target.value
         });
+
+    }
+
+    addUser = (newUser) => {
+
+            axios.post('localhost:3000/users', {newUser: newUser})
+                .then(response => {
+                    this.props.dispatch(addUser(newUser))
+                })
+                .catch(error => console.log(error))
+
     }
 
     handleOnSubmit = (event) => {
@@ -81,14 +93,9 @@ class CreateAccount extends React.Component{
 }
 
 let mapStateToProps = (state) => {
-    return {newUser: {password: state.password,
-        username: state.username,
-            name: state.name,
-            picture: state.picture,
-            bio: state.bio,
-            pronouns: state.pronouns
+    return {newUser: state.newUser
 
-        }}
+        }
 }
 const mapDispatchToProps = (dispatch) => {
     return {

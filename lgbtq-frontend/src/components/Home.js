@@ -6,10 +6,12 @@ import {Card} from "react-bootstrap";
 import Users from "./Users";
 
 export default class Home extends React.Component{
-    state = { users: []
-        // username: '',
-        //    password: ''
-    }
+    // state = { users: []
+    //     // username: '',
+    //     //    password: ''
+    // }
+componentDidMount() {
+}
 
     render() {
         return(
@@ -20,6 +22,7 @@ export default class Home extends React.Component{
                     </CardTitle>
                 </Card>
                 {/*<button onClick={() => this.state.getUsers()}>Get Users</button>*/}
+                <Users/>
 
 
             </div>
