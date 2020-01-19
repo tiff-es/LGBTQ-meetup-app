@@ -10,7 +10,7 @@ import Home from "./components/Home";
 import CreateAccount from "./components/CreateAccount";
 import NavBar from "./components/NavBar"
 import Users from "./components/Users";
-
+import Meetups from './components/Meetups'
 
 const Map = ReactMapboxGl({
   accessToken: "pk.eyJ1IjoidGlmZmFueWFicmFoYW0iLCJhIjoiY2s1N2x6MnRpMDU3MjNscHMxdGRhcTZ6NiJ9.7D9NUZEVIS2O86VocLUXPQ\n.p6GGlfyV-WksaDV_KdN27A",})
@@ -27,6 +27,7 @@ function App() {
                   <Route path="/createaccount" component={CreateAccount} />
                   <Route path="/login" component={Login} />
                <Route path='/users' component={Users}/>
+                  <Route path='/meetups' component={Meetups}/>
                   <Route path="/*" component={() => 'NOT FOUND'} />
               </Switch>
           </div>

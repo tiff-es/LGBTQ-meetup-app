@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'static#index'
   namespace :api, defaults: {format: 'json'} do
     get 'users', to: 'users#index'
+    get 'meetups', to: 'meetups#index'
   end
   resources :users
   post 'user' => 'users#create'

@@ -1,4 +1,4 @@
-class API::MeetupsController < ApplicationController
+class MeetupsController < ApplicationController
   def index
     @meetups = Meetup.all
     render json: @meetups

@@ -7,3 +7,5 @@ class Meetup < ApplicationRecord
   has_many :users_meetups
   has_many :users, through: :users_meetups
 end
+
+
