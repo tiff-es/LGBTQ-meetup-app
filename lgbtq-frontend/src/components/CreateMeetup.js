@@ -1,21 +1,25 @@
 import React from "react";
 import axios from 'axios'
 import {connect} from 'react-redux'
-import {addMeetup,updateMeetup} from "../actions/meetup";
+import {addMeetup,updateMeetup, getCategories} from "../actions/meetup";
 import {Form} from "react-bootstrap";
 import Button from "@material-ui/core/Button";
 // import mapDispatchToProps from "react-redux/lib/connect/mapDispatchToProps";
 
 class CreateMeetup extends React.Component{
+    // state = {
+    //     categories: [1,2,3]
+    // }
+
     handleInputChange = (event) => {
         this.setState({
             [event.target.id]: event.target.value
         })
     }
     addMeetup = (newMeetup) => {
-        axios.post('localhost:3000/meetups')
+        axios.post('localhost:3000/meetups', {newMeetup: newMeetup})
             .then(response => {
-                this.props.dispatch(addMeetup(newMeetup))
+                this.props.addMeetup(response.data)
             })
             .catch(e => console.warn(e))
     }
@@ -23,6 +27,20 @@ class CreateMeetup extends React.Component{
         event.preventDefault()
         this.props.addMeetup(this.state)
     }
+
+     getCategories = (categories) =>
+    {
+        axios.get('http://localhost:3000/categories')
+            .then(response => {
+                this.props.getCategories(response.data)
+            })
+            .catch(e => console.log(e))
+    }
+    componentDidMount() {
+     this.getCategories()
+
+    }
+
     render(){
         return(
 
@@ -52,10 +70,16 @@ class CreateMeetup extends React.Component{
                     <Form.Control id='date' type="text" placeholder="Choose Date" />
                 </Form.Group>
 
-                    <Form.Group id='create-meetup form-group category'onChange={this.handleInputChange} >
-                        <Form.Label id='create-meetup form-label category'>Category</Form.Label>
-                        <Form.Control id='category' type="radio" placeholder="Choose Category" />
-                    </Form.Group>
+                    {/*  <Form.Row id='create-meetup form-group category'onChange={this.handleInputChange} >*/}
+                    {/*<Form.Label id='create-meetup form-label category'>Transgender/Genderqueer </Form.Label>*/}
+                    {/*      <Form.Button id='Transgender/Genderqueer' type="radio" placeholder="Choose Category" />*/}
+
+                    {/*      <Form.Control id='Transgender/Genderqueer' type="radio" placeholder="Choose Category" />*/}
+                    {/*</Form.Row>*/}
+
+                    {/* Add Bootstrap Radio buttons for categories*/}
+
+
 
                     <Form.Group id='create-meetup form-group info'onChange={this.handleInputChange}>
                         <Form.Label id='create-meetup form-label info'>Meetup Info</Form.Label>
@@ -74,13 +98,21 @@ class CreateMeetup extends React.Component{
 
 
 const mapStateToProps = (state) => {
-    return{newMeetup: state.newMeetup}
+    return{
+        newMeetup: state.newMeetup,
+        categories: state.categories
+
+    }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return{
         addMeetup: (newMeetup) => {
             dispatch(addMeetup(newMeetup))
+        },
+        getCategories: (categories) => {
+            dispatch(getCategories(categories))
+
         }
      }
 }

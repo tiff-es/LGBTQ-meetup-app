@@ -14,8 +14,8 @@ export default class NavBar extends Component {
 
                 <NavLink to="/"><Button className='navbar-btn'><div className='nav-link'>Home</div></Button></NavLink>
                 <NavLink to="/createaccount"><Button className='navbar-btn'><div className='nav-link'>Create Account</div></Button></NavLink>
-                <NavLink to="/login"><Button classname='navbar-btn'><div className='nav-link'>Login</div></Button></NavLink>
-                <NavLink to="/meetups"><Button classname='navbar-btn'><div className='nav-link'>Meetups</div></Button></NavLink>
+                <NavLink to="/login"><Button className='navbar-btn'><div className='nav-link'>Login</div></Button></NavLink>
+                <NavLink to="/meetups"><Button className='navbar-btn'><div className='nav-link'>Meetups</div></Button></NavLink>
                 <NavLink to="/createmeetup"><Button className='navbar-btn'><div className='nav-link'>Create Meetup</div></Button></NavLink>
 
             </Navbar>

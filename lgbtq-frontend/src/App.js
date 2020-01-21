@@ -23,7 +23,7 @@ function App() {
 
       <Router history={history}>
           <div>
-              <NavBar  className=''/>
+              <NavBar  className='navbar'/>
               <Switch>
                   <Route exact path="/" component={Home} />
                   <Route path="/createaccount" component={CreateAccount} />

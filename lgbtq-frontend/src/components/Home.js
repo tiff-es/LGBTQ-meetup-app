@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import CardTitle from "react-bootstrap/Card";
 import {Card} from "react-bootstrap";
 import Users from "./Users";
+import Meetups from "./Meetups";
 
 export default class Home extends React.Component{
     // state = { users: []
@@ -11,6 +12,7 @@ export default class Home extends React.Component{
     //     //    password: ''
     // }
 componentDidMount() {
+
 }
 
     render() {
@@ -57,4 +59,4 @@ componentDidMount() {
 
 
 
-// connect(mapStateToProps)(Home)
+connect()(Home)

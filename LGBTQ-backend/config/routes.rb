@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: 'json'} do
     get 'users', to: 'users#index'
     get 'meetups', to: 'meetups#index'
+    get 'categories', to: 'categories#index'
+    post 'meetups', to: 'meetups#create'
   end
   resources :users
   post 'user' => 'users#create'

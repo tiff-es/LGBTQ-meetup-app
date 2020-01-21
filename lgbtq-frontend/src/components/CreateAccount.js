@@ -23,14 +23,15 @@ class CreateAccount extends React.Component{
     }
 
     addUser = (newUser) => {
-
-            axios.post('localhost:3000/users', {newUser: newUser})
+        axios.post('localhost:3000/users', {newUser: newUser})
                 .then(response => {
                     this.props.dispatch(addUser(newUser))
                 })
                 .catch(error => console.log(error))
 
     }
+
+
 
     handleOnSubmit = (event) => {
         event.preventDefault();

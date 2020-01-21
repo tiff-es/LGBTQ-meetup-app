@@ -1,5 +1,5 @@
 import Time from 'redux-time'
-import {ADD_MEETUP, UPDATE_MEETUP, GET_MEETUPS} from "../actions/actionTypes";
+import {ADD_MEETUP, UPDATE_MEETUP, GET_MEETUPS, GET_CATEGORIES} from "../actions/actionTypes";
 
 export default function manageMeetups(state = {
     meetups: [],
@@ -9,7 +9,8 @@ export default function manageMeetups(state = {
         date: '',
         info: '',
         category: ''
-    }
+    },
+    categories: []
     // updatedMeetup: {
     //     location: '',
     //     time: '',
@@ -37,6 +38,11 @@ export default function manageMeetups(state = {
                     ...action.meetups
                 }
             })
+        case GET_CATEGORIES:
+            return{
+                ...state,
+                categories: action.categories
+            }
         default:
             return state
 
