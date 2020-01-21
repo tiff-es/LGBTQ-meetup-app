@@ -70,6 +70,9 @@ class CreateMeetup extends React.Component{
                 </Form.Group>
 
                     <Form.Group id='create-meetup form-group info'onChange={this.handleInputChange}>
+                        <Form.Label id='create-meetup form-label category'>Event Category:</Form.Label>
+                        <br/>
+
                         <Form.Check  inline label='Lesbian' type='radio' id='category' value='Lesbian'/>
                         <Form.Check  inline label='Gay' type='radio' id='category' value='Gay'/>
                         <Form.Check  inline label='Transgender/Genderqueer' type='radio' id='category' value='Transgender/Genderqueer'/>
