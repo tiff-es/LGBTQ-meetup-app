@@ -8,6 +8,8 @@ import Login from "./components/Login";
 import createHistory from "history/createBrowserHistory";
 import Home from "./components/Home";
 import CreateAccount from "./components/CreateAccount";
+import CreateMeetup from "./components/CreateMeetup";
+
 import NavBar from "./components/NavBar"
 import Users from "./components/Users";
 import Meetups from './components/Meetups'
@@ -25,6 +27,8 @@ function App() {
               <Switch>
                   <Route exact path="/" component={Home} />
                   <Route path="/createaccount" component={CreateAccount} />
+                  <Route path="/createmeetup" component={CreateMeetup} />
+
                   <Route path="/login" component={Login} />
                <Route path='/users' component={Users}/>
                   <Route path='/meetups' component={Meetups}/>

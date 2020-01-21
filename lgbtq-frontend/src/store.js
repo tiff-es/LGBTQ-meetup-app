@@ -6,7 +6,7 @@ import rootReducer from "./reducers/rootReducer";
 
 export default function configureStore() {
    return createStore(
-        rootReducer,composeWithDevTools( applyMiddleware(thunk))
+        rootReducer,composeWithDevTools(applyMiddleware(thunk))
 
     )
 }

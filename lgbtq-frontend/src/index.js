@@ -6,7 +6,6 @@ import * as serviceWorker from './serviceWorker';
 import {Provider, connect} from "react-redux";
 
 import 'bootstrap/dist/css/bootstrap.css';
-import {composeWithDevTools} from 'redux-devtools-extension'
 import configureStore from "./store";
 
 const store = configureStore()
