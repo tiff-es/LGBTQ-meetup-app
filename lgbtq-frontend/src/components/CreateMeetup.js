@@ -1,8 +1,8 @@
 import React from "react";
 import axios from 'axios'
 import {connect} from 'react-redux'
-import {addMeetup,updateMeetup, getCategories} from "../actions/meetup";
-import {Form} from "react-bootstrap";
+import {addMeetup, updateMeetup, getCategories} from "../actions/meetup";
+import {Form, ButtonGroup, FormCheck} from "react-bootstrap";
 import Button from "@material-ui/core/Button";
 // import mapDispatchToProps from "react-redux/lib/connect/mapDispatchToProps";
 
@@ -38,7 +38,6 @@ class CreateMeetup extends React.Component{
     }
     componentDidMount() {
      this.getCategories()
-
     }
 
     render(){
@@ -70,16 +69,11 @@ class CreateMeetup extends React.Component{
                     <Form.Control id='date' type="text" placeholder="Choose Date" />
                 </Form.Group>
 
-                    {/*  <Form.Row id='create-meetup form-group category'onChange={this.handleInputChange} >*/}
-                    {/*<Form.Label id='create-meetup form-label category'>Transgender/Genderqueer </Form.Label>*/}
-                    {/*      <Form.Button id='Transgender/Genderqueer' type="radio" placeholder="Choose Category" />*/}
-
-                    {/*      <Form.Control id='Transgender/Genderqueer' type="radio" placeholder="Choose Category" />*/}
-                    {/*</Form.Row>*/}
-
-                    {/* Add Bootstrap Radio buttons for categories*/}
-
-
+                    <Form.Group id='create-meetup form-group info'onChange={this.handleInputChange}>
+                        <Form.Check  inline label='Lesbian' type='radio' id='category' value='Lesbian'/>
+                        <Form.Check  inline label='Gay' type='radio' id='category' value='Gay'/>
+                        <Form.Check  inline label='Transgender/Genderqueer' type='radio' id='category' value='Transgender/Genderqueer'/>
+                    </Form.Group>
 
                     <Form.Group id='create-meetup form-group info'onChange={this.handleInputChange}>
                         <Form.Label id='create-meetup form-label info'>Meetup Info</Form.Label>
