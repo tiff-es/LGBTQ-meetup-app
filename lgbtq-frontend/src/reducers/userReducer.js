@@ -1,4 +1,5 @@
 import {ADD_USER, GET_USERS, LOGIN} from "../actions/actionTypes";
+import uuid from 'uuid';
 
 export default function manageUsers(state = {
     users: [],
@@ -12,6 +13,7 @@ export default function manageUsers(state = {
 
     },
     newUser: {
+        id: uuid(),
         username: '',
         password: '',
         name: '',

@@ -1,9 +1,10 @@
 import Time from 'redux-time'
 import {ADD_MEETUP, UPDATE_MEETUP, GET_MEETUPS, GET_CATEGORIES} from "../actions/actionTypes";
-
+import uuid from 'uuid'
 export default function manageMeetups(state = {
     meetups: [],
     newMeetup: {
+        id: uuid(),
         location: '',
         time: '',
         date: '',
