@@ -5,7 +5,7 @@ class MeetupsController < ApplicationController
   end
 
   def create
-    @meetup = Meetup.new(meetup_params)
+    @meetup = Meetup.create_or_find_by(meetup_params)
     render json: @meetup
   end
 

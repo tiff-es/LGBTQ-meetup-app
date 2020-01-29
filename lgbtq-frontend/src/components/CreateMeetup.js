@@ -17,7 +17,7 @@ class CreateMeetup extends React.Component{
         })
     }
     addMeetup = (newMeetup) => {
-        axios.post('localhost:3000/meetups', {newMeetup: newMeetup})
+        axios.post('http://localhost:3000/api/meetups', {newMeetup: newMeetup})
             .then(response => {
                 this.props.addMeetup(response.data)
             })

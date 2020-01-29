@@ -5,10 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-User.destroy_all
-Category.destroy_all
-Meetup.destroy_all
+#
+#User.destroy_all
+#Category.destroy_all
+#Meetup.destroy_all
 
 User.create_or_find_by(id: 0, name: 'tiff', picture: 'https://media-exp1.licdn.com/dms/image/C4D03AQFxelN7X2pP-A/profile-displayphoto-shrink_200_200/0?e=1583971200&v=beta&t=zSCOXIkU-rd3PEXJpkTeucjMfRsemZBtUKitN82yR9k',
                             bio: 'I made this app!', pronouns: 'she/her')

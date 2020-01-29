@@ -3,13 +3,13 @@ import axios from 'axios'
 import { connect } from 'react-redux'
 import { addUser, getUsers } from '../actions/user'
 
-class Users extends React.Component {
+class UsersContainer extends React.Component {
     //
     // state = {
     //     users: []
     // }
     getUsers(){
-        axios.get('http://localhost:3000/users')
+        axios.get('http://localhost:3000/api/users')
             .then(response => {
                 this.props.dispatch(getUsers(response.data))
             })
@@ -32,11 +32,8 @@ class Users extends React.Component {
 const mapStateToProps = (state) => {
   return {
 
-
-
       users: state.users
   }
 }
 
-
-export default connect(mapStateToProps)(Users)
+export default connect(mapStateToProps)(UsersContainer)

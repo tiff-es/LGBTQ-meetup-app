@@ -9,9 +9,10 @@ import createHistory from "history/createBrowserHistory";
 import Home from "./components/Home";
 import CreateAccount from "./components/CreateAccount";
 import CreateMeetup from "./components/CreateMeetup";
+import UsersContainer from "./containers/UsersContainer";
 
 import NavBar from "./components/NavBar"
-import Users from "./components/Users";
+import Users from "./containers/UsersContainer";
 import Meetups from './components/Meetups'
 
 const Map = ReactMapboxGl({
@@ -30,7 +31,7 @@ function App() {
                   <Route path="/createmeetup" component={CreateMeetup} />
 
                   <Route path="/login" component={Login} />
-               <Route path='/users' component={Users}/>
+               <Route path='/users' component={UsersContainer}/>
                   <Route path='/meetups' component={Meetups}/>
                   <Route path="/*" component={() => 'NOT FOUND'} />
               </Switch>

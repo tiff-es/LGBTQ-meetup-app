@@ -6,17 +6,16 @@ Rails.application.routes.draw do
   #  get 'categories', to: 'categories#index'
   #  post 'meetups', to: 'meetups#create'
   #end
-  #resources :users
-  #post 'user' => 'users#create'
-  #resources :categories
-  #resources :meetups
-  resources :users, :meetups, :categories
 
-  namespace :api do
+
+
+  scope '/api' do
+    resources :users, :categories, :meetups
     get 'users', to: 'users#index'
     get 'meetups', to: 'meetups#index'
     get 'categories', to: 'categories#index'
-
   end
+
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

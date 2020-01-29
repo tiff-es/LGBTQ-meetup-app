@@ -3,8 +3,9 @@ import NavBar from "./NavBar";
 import {connect} from "react-redux";
 import CardTitle from "react-bootstrap/Card";
 import {Card} from "react-bootstrap";
-import Users from "./Users";
+import UsersContainer from "../containers/UsersContainer";
 import Meetups from "./Meetups";
+import {Menu} from "@material-ui/core";
 
 export default class Home extends React.Component{
     // state = { users: []
@@ -24,7 +25,7 @@ componentDidMount() {
                     </CardTitle>
                 </Card>
                 {/*<button onClick={() => this.state.getUsers()}>Get Users</button>*/}
-                <Users/>
+                
 
 
             </div>

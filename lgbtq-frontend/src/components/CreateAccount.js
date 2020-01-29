@@ -23,7 +23,7 @@ class CreateAccount extends React.Component{
     }
 
     addUser = (newUser) => {
-        axios.post('localhost:3000/users', {newUser: newUser})
+        axios.post('localhost:3000/api/users', {newUser: newUser})
                 .then(response => {
                     this.props.dispatch(addUser(newUser))
                 })

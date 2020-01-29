@@ -13,7 +13,6 @@ export default function manageUsers(state = {
 
     },
     newUser: {
-        id: uuid(),
         username: '',
         password: '',
         name: '',
@@ -27,7 +26,8 @@ export default function manageUsers(state = {
         case GET_USERS:
             return {...state, users: action.users}
         case ADD_USER:
-            return {...state, users: [...state.users,action.newUser]}
+
+            return {...state, users: [...state.users, action.newUser]}
         case LOGIN:
             return {
                 ...state, currentUser: action.currentUser

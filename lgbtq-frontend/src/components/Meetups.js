@@ -11,7 +11,7 @@ class Meetups extends React.Component {
     }
 
      getMeetups() {
-        axios.get('http://localhost:3000/meetups')
+        axios.get('http://localhost:3000/api/meetups')
             .then(response => {
                 this.props.getMeetups(response.data)
             })
