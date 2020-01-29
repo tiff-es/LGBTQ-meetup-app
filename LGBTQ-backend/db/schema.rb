@@ -41,10 +41,8 @@ ActiveRecord::Schema.define(version: 2020_01_10_040016) do
   end
 
   create_table "users_meetups", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "meetup_id"
-    t.index ["meetup_id"], name: "index_users_meetups_on_meetup_id"
-    t.index ["user_id"], name: "index_users_meetups_on_user_id"
+    t.integer "user_id"
+    t.integer "meetup_id"
   end
 
 end

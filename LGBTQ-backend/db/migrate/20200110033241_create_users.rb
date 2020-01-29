@@ -5,7 +5,6 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :picture
       t.text :bio
       t.string :pronouns
-
       t.timestamps
     end
   end
