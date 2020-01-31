@@ -16,7 +16,7 @@ class CreateMeetup extends React.Component{
             [event.target.id]: event.target.value
         })
     }
-    addMeetup = (newMeetup) => {
+    postMeetup = (newMeetup) => {
         axios.post('http://localhost:3000/api/meetups', {newMeetup: newMeetup})
             .then(response => {
                 this.props.addMeetup(response.data)
@@ -25,19 +25,19 @@ class CreateMeetup extends React.Component{
     }
     handleOnSubmit = (event) => {
         event.preventDefault()
-        this.props.addMeetup(this.state)
+        this.postMeetup(this.state)
     }
 
-     getCategories = (categories) =>
+     axiosGetCategories = (categories) =>
     {
-        axios.get('http://localhost:3000/categories')
+        axios.get('http://localhost:3000/api/categories')
             .then(response => {
                 this.props.getCategories(response.data)
             })
             .catch(e => console.log(e))
     }
     componentDidMount() {
-     this.getCategories()
+     this.axiosGetCategories()
     }
 
     render(){

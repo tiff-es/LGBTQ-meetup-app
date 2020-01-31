@@ -11,9 +11,9 @@ Rails.application.routes.draw do
 
   scope '/api' do
     resources :users, :categories, :meetups
-    get 'users', to: 'users#index'
-    get 'meetups', to: 'meetups#index'
-    get 'categories', to: 'categories#index'
+    #get 'users', to: 'users#index'
+    #get 'meetups', to: 'meetups#index'
+    #get 'categories', to: 'categories#index'
   end
 
 

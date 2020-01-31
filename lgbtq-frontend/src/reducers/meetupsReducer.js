@@ -4,7 +4,6 @@ import uuid from 'uuid'
 export default function manageMeetups(state = {
     meetups: [],
     newMeetup: {
-        id: uuid(),
         location: '',
         time: '',
         date: '',
