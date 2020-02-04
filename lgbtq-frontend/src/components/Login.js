@@ -3,8 +3,8 @@ import {Toolbar, Button, GridList, BottomNavigation} from "@material-ui/core";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import {Form} from "react-bootstrap";
+import axios from 'axios'
 import {login} from '../actions/login'
-
 
 
 class Login extends React.Component{
@@ -12,6 +12,14 @@ class Login extends React.Component{
     //  username: '',
     //     password: '',
     // }
+    axiosLogin =  (currentUser) => {
+        axios.post('http://localhost:3000/api/login',  {user: currentUser})
+            .then(response => {
+                localStorage.setItem('token', response.jwt)
+
+            })
+            .catch(error => console.warn(error))
+    }
     handleInputChange = (event) => {
         this.setState({
             [event.target.id]: event.target.value
@@ -21,6 +29,8 @@ class Login extends React.Component{
      handleOnSubmit = (event) => {
          event.preventDefault();
 this.props.login(this.state)
+         this.axiosLogin(this.state)
+
          // this.props.dispatch({type: 'LOGIN', currentUser: {username: this.state.username, password: this.state.username}})    }
      }
     //wire up mapDispatchToProps
@@ -62,11 +72,7 @@ const mapStateToProps = (state) => {
     return {
         currentUser:{
             password: state.password,
-            username: state.username,
-            name: state.name,
-            picture: state.picture,
-            bio: state.bio,
-            pronouns: state.pronouns }
+            username: state.username}
     }
 }
 const mapDispatchToProps = (dispatch) => {
