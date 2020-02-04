@@ -8,8 +8,8 @@ class MeetupsController < ApplicationController
     #byebug
     #@meetup = Meetup.find(meetup_params)
     #if !@meetup
-    byebug
-      @meetup = Meetup.create(meetup_params)
+
+    @meetup = Meetup.create(meetup_params)
     @category = Category.find_by(name: params[:newMeetup][:category])
     @meetup.update(category_id: @category.id)
     #end
