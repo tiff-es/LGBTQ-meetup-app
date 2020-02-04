@@ -10,15 +10,23 @@ import {login} from '../actions/login'
 class Login extends React.Component{
     // state = {
     //  username: '',
-    //     password: '',
-    // }
-    axiosLogin =  (currentUser) => {
-        axios.post('http://localhost:3000/api/login',  {user: currentUser})
-            .then(response => {
-                localStorage.setItem('token', response.jwt)
-
+    //     passwor
+     login = () => {
+        fetch(`http://localhost:3000/api/login`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+              username: this.state.username,
+                password: this.state.password
             })
-            .catch(error => console.warn(error))
+        })
+            .then(resp => resp.json())
+            .then(data => {
+                localStorage.setItem("token", data.jwt)
+            })
     }
     handleInputChange = (event) => {
         this.setState({
@@ -29,7 +37,7 @@ class Login extends React.Component{
      handleOnSubmit = (event) => {
          event.preventDefault();
 this.props.login(this.state)
-         this.axiosLogin(this.state)
+         this.login()
 
          // this.props.dispatch({type: 'LOGIN', currentUser: {username: this.state.username, password: this.state.username}})    }
      }

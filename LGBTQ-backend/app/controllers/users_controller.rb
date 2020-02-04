@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  #skip_before_action :require_login, only: [:create]
+
   def index
     @users = User.all
     render json: @users
@@ -9,11 +11,13 @@ class UsersController < ApplicationController
     if @user.valid?
       payload = {user_id: @user.id}
       token = encode_token(payload)
+      puts token
       render json: {user: @user, jwt: token}
+      byebug
     else
-      render json: {errors: @user.errors.full_messages, status: :not_acceptable}
+      render json: {errors: user.errors.full_messages}, status: :not_acceptable
     end
-  end
+  end 
 
   def show
     @user = User.find(params[:id])
@@ -27,6 +31,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:currentUser).permit(:id, :username, :password, :name,:picture,:bio, :user_id, :pronouns)
+    params.require(:user).permit(:id, :username, :password, :name,:picture,:bio, :user_id, :pronouns)
   end
 end
