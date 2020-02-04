@@ -3,9 +3,7 @@ import NavBar from "./NavBar";
 import {connect} from "react-redux";
 import CardTitle from "react-bootstrap/Card";
 import {Card} from "react-bootstrap";
-import UsersContainer from "../containers/UsersContainer";
-import Meetups from "./Meetups";
-import {Menu} from "@material-ui/core";
+
 
 export default class Home extends React.Component{
     // state = { users: []
@@ -33,29 +31,6 @@ componentDidMount() {
     )}
 }
 //
-
-// const getUsers = () =>  {
-//         dispatch({type: 'GET_USERS_REQUEST'})
-//          fetch('/users.json')
-//             .then(resp => resp.json())
-//             .then(json => dispatch(getUsersSuccess(json)))
-//     }
-//
-// }
-// const getUsersSuccess = json =>{
-//
-//     return{
-//         type: 'GET_USERS_SUCCESS',
-//         json
-//     }
-// }
-//
-//     const mapStateToProps = () => {
-//         return {
-//             getUsers
-//         }
-//     }
-//     }
 
 
 

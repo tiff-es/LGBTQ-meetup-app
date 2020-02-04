@@ -8,7 +8,8 @@ export default function manageMeetups(state = {
         time: '',
         date: '',
         info: '',
-        category: ''
+        category: '',
+        name: ''
     },
     categories: []
     // updatedMeetup: {

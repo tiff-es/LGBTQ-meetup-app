@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_01_10_040016) do
   end
 
   create_table "meetups", force: :cascade do |t|
+    t.string "name"
     t.string "location"
     t.time "time"
     t.date "date"
@@ -32,6 +33,8 @@ ActiveRecord::Schema.define(version: 2020_01_10_040016) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password"
     t.string "name"
     t.string "picture"
     t.text "bio"

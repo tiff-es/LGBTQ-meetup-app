@@ -4,9 +4,10 @@ import {Card} from "react-bootstrap";
 const MeetupCard = (props) => {
 
     return(
-        <div>
 
-        </div>
+        <Card>
+            {props.info}
+        </Card>
 
     )
 }

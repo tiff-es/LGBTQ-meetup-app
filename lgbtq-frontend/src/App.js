@@ -13,7 +13,7 @@ import UsersContainer from "./containers/UsersContainer";
 
 import NavBar from "./components/NavBar"
 import Users from "./containers/UsersContainer";
-import Meetups from './components/Meetups'
+import MeetupsContainer from './containers/MeetupsContainer'
 
 const Map = ReactMapboxGl({
   accessToken: "pk.eyJ1IjoidGlmZmFueWFicmFoYW0iLCJhIjoiY2s1N2x6MnRpMDU3MjNscHMxdGRhcTZ6NiJ9.7D9NUZEVIS2O86VocLUXPQ\n.p6GGlfyV-WksaDV_KdN27A",})
@@ -32,7 +32,7 @@ function App() {
 
                   <Route path="/login" component={Login} />
                <Route path='/users' component={UsersContainer}/>
-                  <Route path='/meetups' component={Meetups}/>
+                  <Route path='/meetups' component={MeetupsContainer}/>
                   <Route path="/*" component={() => 'NOT FOUND'} />
               </Switch>
           </div>
