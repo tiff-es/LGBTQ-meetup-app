@@ -26,6 +26,7 @@ class CreateMeetup extends React.Component{
     handleOnSubmit = (event) => {
         event.preventDefault()
         this.postMeetup(this.state)
+        this.props.addMeetup(this.state)
     }
 
      axiosGetCategories = (categories) =>
