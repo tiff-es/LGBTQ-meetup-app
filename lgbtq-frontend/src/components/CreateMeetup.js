@@ -65,6 +65,12 @@ class CreateMeetup extends React.Component{
                 <h2  id='create-meetup header 'className='header-raised'>Create A New Meetup</h2>
                 <Form id='create-meetup form' onSubmit={this.handleOnSubmit}>
 
+                    <Form.Group id='create-meetup form-group name'onChange={this.handleInputChange}>
+                        <Form.Label id='create-meetup form-label name'>Meetup Name</Form.Label>
+                        <Form.Control id='name' type="text" placeholder="Meetup Name" />
+                    </Form.Group>
+
+
                     <Form.Group id='create-meetup form-group location' controlId="formBasicUsername">
                         <Form.Label id='create-meetup form-label location'>Location</Form.Label>
                         <MapboxAutocomplete publicKey='pk.eyJ1IjoidGlmZmFueWFicmFoYW0iLCJhIjoiY2s1N2x6MnRpMDU3MjNscHMxdGRhcTZ6NiJ9.7D9NUZEVIS2O86VocLUXPQ'

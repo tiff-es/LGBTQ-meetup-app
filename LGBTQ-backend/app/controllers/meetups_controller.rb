@@ -9,6 +9,7 @@ class MeetupsController < ApplicationController
     #@meetup = Meetup.find(meetup_params)
     #if !@meetup
 
+
     @meetup = Meetup.create(meetup_params)
     @category = Category.find_by(name: params[:newMeetup][:category])
     @meetup.update(category_id: @category.id)
@@ -29,7 +30,7 @@ class MeetupsController < ApplicationController
 
   private
   def meetup_params
-    params.require(:newMeetup).permit(:location, :time, :date, :info, :name)
+    params.require(:newMeetup).permit(:category_id, :location, :time, :date, :info, :name)
   end
 
   # def request_mapbox
