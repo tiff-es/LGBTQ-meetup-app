@@ -1,5 +1,5 @@
 import Time from 'redux-time'
-import {ADD_MEETUP, UPDATE_MEETUP, GET_MEETUPS, GET_CATEGORIES} from "../actions/actionTypes";
+import {ADD_MEETUP, DEFAULT_MAP, UPDATE_MEETUP, GET_MEETUPS, GET_CATEGORIES} from "../actions/actionTypes";
 import uuid from 'uuid'
 export default function manageMeetups(state = {
     meetups: [],
@@ -11,7 +11,13 @@ export default function manageMeetups(state = {
         category: '',
         name: ''
     },
-    categories: []
+    categories: [],
+    map: {
+        width: '',
+        height:'',
+        lat:'',
+        lon: ''
+    }
     // updatedMeetup: {
     //     location: '',
     //     time: '',
@@ -21,6 +27,13 @@ export default function manageMeetups(state = {
     // }
 }, action){
     switch (action.type) {
+        case DEFAULT_MAP:
+            return {...state, map: {
+                width: '100vw',
+                    height: '100vh',
+                    lat: 38.9071923,
+                    lon: -77.0368707
+                }}
         case GET_MEETUPS:
             return {...state, meetups: action.meetups}
 

@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios'
 import {connect} from 'react-redux'
-import {addMeetup, updateMeetup, getCategories} from "../actions/meetup";
+import {addMeetup, updateMeetup, getCategories, axiosGetCategories} from "../actions/meetup";
 import {Form, ButtonGroup, FormCheck} from "react-bootstrap";
 import Button from "@material-ui/core/Button";
 // import mapDispatchToProps from "react-redux/lib/connect/mapDispatchToProps";
@@ -41,7 +41,7 @@ class CreateMeetup extends React.Component{
 
 
     componentDidMount() {
-     this.axiosGetCategories()
+     this.props.axiosGetCategories()
     }
 
     render(){
@@ -122,8 +122,8 @@ const mapDispatchToProps = (dispatch) => {
         addMeetup: (newMeetup) => {
             dispatch(addMeetup(newMeetup))
         },
-        getCategories: (categories) => {
-            dispatch(getCategories(categories))
+        axiosGetCategories: (categories) => {
+            dispatch(axiosGetCategories(categories))
 
         }
      }

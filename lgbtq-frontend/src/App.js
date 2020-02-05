@@ -15,10 +15,11 @@ import NavBar from "./components/NavBar"
 import Users from "./containers/UsersContainer";
 import MeetupsContainer from './containers/MeetupsContainer'
 import {getProfileFetch} from "./actions/user";
+import Layer from "react-mapbox-gl/lib-esm/layer";
+import Feature from "react-mapbox-gl/lib-esm/feature";
+import MapComponent from "./components/MapComponent";
 // import mapDispatchToProps from "react-redux/lib/connect/mapDispatchToProps";
 
-const Map = ReactMapboxGl({
-  accessToken: "pk.eyJ1IjoidGlmZmFueWFicmFoYW0iLCJhIjoiY2s1N2x6MnRpMDU3MjNscHMxdGRhcTZ6NiJ9.7D9NUZEVIS2O86VocLUXPQ\n.p6GGlfyV-WksaDV_KdN27A",})
 
 class App extends React.Component {
     // componentDidMount = () => {
@@ -41,6 +42,7 @@ class App extends React.Component {
                         <Route path="/login" component={Login}/>
                         <Route path='/users' component={UsersContainer}/>
                         <Route path='/meetups' component={MeetupsContainer}/>
+                        <Route path='/map' component={MapComponent}/>
                         <Route path="/*" component={() => 'NOT FOUND'}/>
                     </Switch>
                 </div>

@@ -1,4 +1,4 @@
-import {GET_MEETUPS, ADD_MEETUP, UPDATE_MEETUP, GET_CATEGORIES} from "./actionTypes";
+import {GET_MEETUPS, DEFAULT_MAP, ADD_MEETUP, UPDATE_MEETUP, GET_CATEGORIES} from "./actionTypes";
 import axios from "axios";
 
 const addMeetup = (newMeetup) => {
@@ -19,6 +19,10 @@ const getMeetups = (meetups) => {
     return {type: GET_MEETUPS, meetups: meetups}
 }
 
+const getMapDefault = (mapParams) => {
+    return{type: DEFAULT_MAP, map: mapParams}
+}
+
 const updateMeetup = (updatedMeetup) => {
     return {type: UPDATE_MEETUP, updatedMeetup}
 }
@@ -33,17 +37,5 @@ const axiosGetMeetups = (meetups) => {
     }
 
 }
-export {addMeetup, getMeetups, updateMeetup, getCategories, axiosGetMeetups, axiosGetCategories}
-
-
-// import {ADD_USER, GET_USERS} from "./actionTypes";
-//
-// const addUser = (newUser) => {
-//     return { type: ADD_USER, newUser: newUser }
-// };
-// export {addUser}
-//
-// export function getUsers(users) {
-//     return { type: GET_USERS, users: users }
-// }
+export {addMeetup,getMapDefault, getMeetups, updateMeetup, getCategories, axiosGetMeetups, axiosGetCategories}
 
