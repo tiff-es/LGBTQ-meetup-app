@@ -14,35 +14,46 @@ import UsersContainer from "./containers/UsersContainer";
 import NavBar from "./components/NavBar"
 import Users from "./containers/UsersContainer";
 import MeetupsContainer from './containers/MeetupsContainer'
+import {getProfileFetch} from "./actions/user";
+// import mapDispatchToProps from "react-redux/lib/connect/mapDispatchToProps";
 
 const Map = ReactMapboxGl({
   accessToken: "pk.eyJ1IjoidGlmZmFueWFicmFoYW0iLCJhIjoiY2s1N2x6MnRpMDU3MjNscHMxdGRhcTZ6NiJ9.7D9NUZEVIS2O86VocLUXPQ\n.p6GGlfyV-WksaDV_KdN27A",})
-function App() {
-    const history = createHistory()
 
-    return (
+class App extends React.Component {
+    // componentDidMount = () => {
+    //     this.props.getProfileFetch()
+    // }
+    render() {
 
-      <Router history={history}>
-          <div>
-              <NavBar  className='navbar'/>
-              <Switch>
-                  <Route exact path="/" component={Home} />
-                  <Route path="/createaccount" component={CreateAccount} />
-                  <Route path="/createmeetup" component={CreateMeetup} />
+        const history = createHistory()
 
-                  <Route path="/login" component={Login} />
-               <Route path='/users' component={UsersContainer}/>
-                  <Route path='/meetups' component={MeetupsContainer}/>
-                  <Route path="/*" component={() => 'NOT FOUND'} />
-              </Switch>
-          </div>
-      </Router>
-)
+        return (
 
- }
-const mapStateToProps = (state) => {
-    return {user: state.user}
+            <Router history={history}>
+                <div>
+                    <NavBar className='navbar'/>
+                    <Switch>
+                        <Route exact path="/" component={Home}/>
+                        <Route path="/createaccount" component={CreateAccount}/>
+                        <Route path="/createmeetup" component={CreateMeetup}/>
+
+                        <Route path="/login" component={Login}/>
+                        <Route path='/users' component={UsersContainer}/>
+                        <Route path='/meetups' component={MeetupsContainer}/>
+                        <Route path="/*" component={() => 'NOT FOUND'}/>
+                    </Switch>
+                </div>
+            </Router>
+        )
+
+    }
 }
 
+// const mapDispatchToProps = dispatch => ({
+//     getProfileFetch: () => dispatch(getProfileFetch())
+// })
+//
 
-export default connect(mapStateToProps)(App);
+
+export default connect()(App);

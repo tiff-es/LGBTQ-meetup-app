@@ -1,4 +1,5 @@
 import {GET_MEETUPS, ADD_MEETUP, UPDATE_MEETUP, GET_CATEGORIES} from "./actionTypes";
+import axios from "axios";
 
 const addMeetup = (newMeetup) => {
     return {type: ADD_MEETUP, newMeetup: newMeetup}
@@ -14,8 +15,18 @@ const getMeetups = (meetups) => {
 const updateMeetup = (updatedMeetup) => {
     return {type: UPDATE_MEETUP, updatedMeetup}
 }
+const axiosGetMeetups = (meetups) => {
+    return dispatch => {
+        axios.get('http://localhost:3000/api/meetups')
+            .then(response => {
+                dispatch(getMeetups(response.data))
 
-export {addMeetup, getMeetups, updateMeetup, getCategories}
+            })
+            .catch(e => console.warn(e))
+    }
+
+}
+export {addMeetup, getMeetups, updateMeetup, getCategories, axiosGetMeetups}
 
 
 // import {ADD_USER, GET_USERS} from "./actionTypes";
