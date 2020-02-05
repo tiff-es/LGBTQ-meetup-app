@@ -1,17 +1,9 @@
-import {ADD_USER, GET_USERS, LOGIN} from "../actions/actionTypes";
+import {ADD_USER, GET_USERS, LOGIN, LOGIN_USER} from "../actions/actionTypes";
 import uuid from 'uuid';
 
 export default function manageUsers(state = {
     users: [],
-    currentUser: {
-        username: '',
-        password: '',
-        name: '',
-        picture: '',
-        bio: '',
-        pronouns: ''
-
-    },
+    currentUser: {},
     newUser: {
         username: '',
         password: '',
@@ -28,7 +20,7 @@ export default function manageUsers(state = {
         case ADD_USER:
 
             return {...state, users: [...state.users, action.newUser]}
-        case LOGIN:
+        case LOGIN_USER:
             return {
                 ...state, currentUser: action.currentUser
             }

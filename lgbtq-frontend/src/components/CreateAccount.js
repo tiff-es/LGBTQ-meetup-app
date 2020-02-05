@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "./NavBar";
 import {connect} from "react-redux";
-import {addUser} from '../actions/user'
+import {userPostFetch} from '../actions/user'
 import 'bootstrap/dist/css/bootstrap.css';
 import {FormGroup, FormText} from "react-bootstrap";
 import Button from "@material-ui/core/Button";
@@ -11,10 +11,14 @@ import {AxiosInstance as axios} from "axios";
 
 class CreateAccount extends React.Component{
 
-    // state = {
-    //     username: '',
-    //     password: '',
-    // }
+    state = {
+        username: '',
+        password: '',
+        name: '',
+        picture: '',
+        bio: '',
+        pronouns: ''
+    }
     handleInputChange = (event) => {
         this.setState({
             [event.target.id]: event.target.value
@@ -22,20 +26,20 @@ class CreateAccount extends React.Component{
 
     }
 
-    addUser = (newUser) => {
-        axios.post('localhost:3000/api/users', {newUser: newUser})
-                .then(response => {
-                    this.props.addUser(response.data)
-                })
-                .catch(error => console.log(error))
-
-    }
+    // addUser = (newUser) => {
+    //     axios.post('localhost:3000/api/users', {newUser: newUser})
+    //             .then(response => {
+    //                 this.props.addUser(response.data)
+    //             })
+    //             .catch(error => console.log(error))
+    //
+    // }
 
 
 
     handleOnSubmit = (event) => {
         event.preventDefault();
-        this.props.addUser(this.state.newUser)
+        this.props.userPostFetch(this.state)
         // this.props.dispatch({type: 'LOGIN', currentUser: {username: this.state.username, password: this.state.username}})    }
     }
 
@@ -84,7 +88,7 @@ class CreateAccount extends React.Component{
 
 
 
-                    <Button id='create-account submit-btn' variant='primary' className='submitButton' action={addUser()} type="submit"> Submit </Button>
+                    <Button id='create-account submit-btn' variant='primary' className='submitButton' type="submit"> Submit </Button>
                 </Form>
             </div>
 
@@ -93,17 +97,17 @@ class CreateAccount extends React.Component{
 
 }
 
-let mapStateToProps = (state) => {
-    return {newUser: state.newUser
-
-        }
-}
+// let mapStateToProps = (state) => {
+//     return {newUser: state.newUser
+//
+//         }
+// }
 const mapDispatchToProps = (dispatch) => {
     return {
-        addUser: (newUser) => {
-            dispatch(addUser(newUser))
+        userPostFetch: (userInfo) => {
+            dispatch(userPostFetch(userInfo))
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateAccount)
+export default connect(null,mapDispatchToProps)(CreateAccount)

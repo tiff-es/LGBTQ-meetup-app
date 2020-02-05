@@ -1,7 +1,7 @@
 class AuthController < ApplicationController
   #skip_before_action :require_login, only: [:login, :auto_login]
   def login
-    byebug
+
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       payload = {user_id: user.id}

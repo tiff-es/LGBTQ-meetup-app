@@ -5,29 +5,16 @@ import {Link} from "react-router-dom";
 import {Form} from "react-bootstrap";
 import axios from 'axios'
 import {login} from '../actions/login'
+import {userLoginFetch} from "../actions/user";
 
 
 class Login extends React.Component{
-    // state = {
-    //  username: '',
-    //     passwor
-     login = () => {
-        fetch(`http://localhost:3000/api/login`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify({
-              username: this.state.username,
-                password: this.state.password
-            })
-        })
-            .then(resp => resp.json())
-            .then(data => {
-                localStorage.setItem("token", data.jwt)
-            })
+    state = {
+        username: "",
+        password: ""
     }
+
+
     handleInputChange = (event) => {
         this.setState({
             [event.target.id]: event.target.value
@@ -36,9 +23,7 @@ class Login extends React.Component{
 
      handleOnSubmit = (event) => {
          event.preventDefault();
-this.props.login(this.state)
-         this.login()
-
+        this.props.userLoginFetch(this.state)
          // this.props.dispatch({type: 'LOGIN', currentUser: {username: this.state.username, password: this.state.username}})    }
      }
     //wire up mapDispatchToProps
@@ -76,17 +61,17 @@ this.props.login(this.state)
 //     users: state => state.users
 // })
 
-const mapStateToProps = (state) => {
-    return {
-        currentUser:{
-            password: state.password,
-            username: state.username}
-    }
-}
+// const mapStateToProps = (state) => {
+//     return {
+//         currentUser:{
+//             password: state.password,
+//             username: state.username}
+//     }
+// }
 const mapDispatchToProps = (dispatch) => {
     return {
-        login: (currentUser) => {
-            dispatch(login(currentUser))
+        userLoginFetch: (userInfo) => {
+            dispatch(userLoginFetch(userInfo))
         }
     };
 }
@@ -94,4 +79,4 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-export default connect(mapStateToProps,  mapDispatchToProps)(Login)
+export default connect(null,mapDispatchToProps)(Login)
