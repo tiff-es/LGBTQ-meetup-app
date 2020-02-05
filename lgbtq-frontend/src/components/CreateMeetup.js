@@ -39,14 +39,7 @@ class CreateMeetup extends React.Component{
         this.props.addMeetup(this.state)
     }
 
-     axiosGetCategories = (categories) =>
-    {
-        axios.get('http://localhost:3000/api/categories')
-            .then(response => {
-                this.props.getCategories(response.data)
-            })
-            .catch(e => console.log(e))
-    }
+
     componentDidMount() {
      this.axiosGetCategories()
     }

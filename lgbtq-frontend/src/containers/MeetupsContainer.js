@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios'
 import {connect} from 'react-redux'
-import {addMeetup, axiosGetMeetups, getMeetups, updateMeetup} from "../actions/meetup";
+import {addMeetup, axiosGetCategories, axiosGetMeetups, getMeetups, updateMeetup} from "../actions/meetup";
 import Meetups from "../components/Meetups";
 class MeetupsContainer extends React.Component {
     // state = {
@@ -11,6 +11,7 @@ class MeetupsContainer extends React.Component {
 
 
     componentDidMount() {
+        this.props.axiosGetCategories()
         this.props.axiosGetMeetups()
     }
 
@@ -33,6 +34,9 @@ const mapDispatchToProps = (dispatch) => {
     return{
         axiosGetMeetups: (meetups) => {
             dispatch(axiosGetMeetups(meetups))
+        },
+        axiosGetCategories: (categories) => {
+            dispatch(axiosGetCategories(categories))
         }
     }
 

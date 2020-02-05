@@ -7,7 +7,14 @@ const addMeetup = (newMeetup) => {
 const getCategories = (categories) => {
     return {type: GET_CATEGORIES, categories: categories}
 }
-
+const axiosGetCategories = (categories) => {
+return dispatch => {    axios.get('http://localhost:3000/api/categories')
+        .then(response => {
+            dispatch(getCategories(response.data))
+        })
+        .catch(e => console.log(e))
+}
+}
 const getMeetups = (meetups) => {
     return {type: GET_MEETUPS, meetups: meetups}
 }
@@ -26,7 +33,7 @@ const axiosGetMeetups = (meetups) => {
     }
 
 }
-export {addMeetup, getMeetups, updateMeetup, getCategories, axiosGetMeetups}
+export {addMeetup, getMeetups, updateMeetup, getCategories, axiosGetMeetups, axiosGetCategories}
 
 
 // import {ADD_USER, GET_USERS} from "./actionTypes";

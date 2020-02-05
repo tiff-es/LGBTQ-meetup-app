@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios'
 import { connect } from 'react-redux'
-import {addUser, axiosGetUsers, getUsers} from '../actions/user'
+import {axiosGetUsers, getUsers} from '../actions/user'
 import {Card} from "react-bootstrap";
 import UserCard from '../components/UserCard'
 import {addMeetup, getMeetups} from "../actions/meetup";
