@@ -1,6 +1,5 @@
 import {GET_MEETUPS, DEFAULT_MAP, ADD_MEETUP, UPDATE_MEETUP, GET_CATEGORIES} from "./actionTypes";
 import axios from "axios";
-
 const addMeetup = (newMeetup) => {
     return {type: ADD_MEETUP, newMeetup: newMeetup}
 }

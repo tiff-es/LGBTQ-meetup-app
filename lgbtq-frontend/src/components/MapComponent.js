@@ -1,30 +1,51 @@
 import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
-import React from "react";
+import React,  { useState } from "react";
 import {connect} from "react-redux";
 import {axiosGetUsers} from "../actions/user";
 import {getMapDefault} from "../actions/meetup";
-
-
-
+import mapboxgl from "mapbox-gl";
 class MapComponent extends React.Component {
 // state = {
 //     height: '50vh',
 //     width: '50vw'
 // }
-componentDidMount() {
-    this.props.getMapDefault()
-    // this.setState({
-    //     height: this.props.map.height,
-    //     width: this.props.map.width
-    // })
+//     \
+state = {
+    ll : null
 }
+    componentDidMount() {
+        this.props.getMapDefault()
+
+
+        // this.setState({
+        //     height: this.props.map.height,
+        //     width: this.props.map.width
+
+        // })
+        //
+        // this.setState({
+        //     ll: this.centerCoordinates
+        // })
+    }
+// centerCoordinates = () => {
+//     let arr = [this.props.map.lat, this.props.map.lon]
+//     let ll = mapboxgl.LngLat.convert(arr);
+//
+//     return (
+// ll    )
+//
+// }
+
 
     render() {
+        // let ll =
         return (
+
+
             <Map
-
-
-                                style="mapbox://styles/mapbox/streets-v9"
+                zoom={this.props.map.zoom}
+                center={[this.props.map.lon, 38.900497]}
+                style="mapbox://styles/mapbox/streets-v9"
                 containerStyle={{
                     height: this.props.map.height,
                     width: this.props.map.width

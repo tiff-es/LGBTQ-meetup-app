@@ -13,26 +13,22 @@ export default function manageMeetups(state = {
     },
     categories: [],
     map: {
-        width: '',
-        height:'',
-        lat:'',
-        lon: ''
+        width: '50vh',
+        height:'30vw',
+        lat:  38.900497,
+        lon: -77.007507,
+        zoom: [5]
     }
-    // updatedMeetup: {
-    //     location: '',
-    //     time: '',
-    //     date: '',
-    //     info: '',
-    //     category: ''
-    // }
+    // these are the default coordinates
 }, action){
     switch (action.type) {
         case DEFAULT_MAP:
             return {...state, map: {
-                width: '100vw',
-                    height: '100vh',
-                    lat: 38.9071923,
-                    lon: -77.0368707
+                width: '50vw',
+                    height: '30vh',
+                    lat: 38.900497,
+                    lon: -77.007507,
+                    zoom: [5]
                 }}
         case GET_MEETUPS:
             return {...state, meetups: action.meetups}
