@@ -13,11 +13,13 @@ class CreateMeetup extends React.Component{
     // }
     _suggestionSelect = (result, lat, lng, text) => {
        console.log(result)
-        this.handleLocationChange(result)
+        this.handleLocationChange(result, lat, lng)
     }
-    handleLocationChange = (result) => {
+    handleLocationChange = (result, lat, lng) => {
         this.setState({
-            location: result
+            location: result,
+            lat: lat,
+            lon: lng
         })
     }
 

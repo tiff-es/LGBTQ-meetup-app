@@ -2,49 +2,30 @@ import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 import React,  { useState } from "react";
 import {connect} from "react-redux";
 import {axiosGetUsers} from "../actions/user";
-import {getMapDefault} from "../actions/meetup";
+import {getMapDefault, getMeetupLatLng} from "../actions/meetup";
 import mapboxgl from "mapbox-gl";
+import icon from '../assets/img/pindrop-512.png'
 class MapComponent extends React.Component {
-// state = {
-//     height: '50vh',
-//     width: '50vw'
-// }
-//     \
 state = {
-    ll : null
+    meetup: {}
 }
     componentDidMount() {
         this.props.getMapDefault()
-
-
-        // this.setState({
-        //     height: this.props.map.height,
-        //     width: this.props.map.width
-
-        // })
-        //
-        // this.setState({
-        //     ll: this.centerCoordinates
-        // })
     }
-// centerCoordinates = () => {
-//     let arr = [this.props.map.lat, this.props.map.lon]
-//     let ll = mapboxgl.LngLat.convert(arr);
-//
-//     return (
-// ll    )
-//
-// }
+    compo
 
 
     render() {
-        // let ll =
+        console.log(this.props.lat)
+        const image = new Image(30, 30);
+        image.src = icon
+        const images = ['myImage', image];
         return (
 
 
             <Map
                 zoom={this.props.map.zoom}
-                center={[this.props.map.lon, 38.900497]}
+                center={[this.props.lon, this.props.lat]}
                 style="mapbox://styles/mapbox/streets-v9"
                 containerStyle={{
                     height: this.props.map.height,
@@ -52,8 +33,9 @@ state = {
                 }}
             >
 
-                <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-                    <Feature coordinates={[this.props.map.lon, this.props.map.lat]} />
+                <Layer type="symbol" id="symbol" layout={{ 'icon-image': 'myImage' }} images={images}>
+                    {/*<Feature coordinates={[this.props.map.lon, this.props.map.lat]} />*/}
+                    <Feature point={[this.props.lon, this.props.lat]} coordinates={[this.props.lon, this.props.lat]}/>
                 </Layer>
             </Map>
         )
@@ -62,11 +44,13 @@ state = {
 
 const mapStateToProps = (state) => {
     return {
-        map: state.meetups.map
+        map: state.meetups.map,
+        coordinates: state.meetups.coordinates
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
+
     return {
         getMapDefault: (mapParams) => {
             dispatch(getMapDefault(mapParams))

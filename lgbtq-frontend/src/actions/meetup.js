@@ -1,4 +1,4 @@
-import {GET_MEETUPS, DEFAULT_MAP, ADD_MEETUP, UPDATE_MEETUP, GET_CATEGORIES} from "./actionTypes";
+import {GET_MEETUPS, DEFAULT_MAP, ADD_MEETUP, UPDATE_MEETUP, GET_CATEGORIES, GET_MEETUP_COORDINATES} from "./actionTypes";
 import axios from "axios";
 const addMeetup = (newMeetup) => {
     return {type: ADD_MEETUP, newMeetup: newMeetup}
@@ -17,7 +17,9 @@ return dispatch => {    axios.get('http://localhost:3000/api/categories')
 const getMeetups = (meetups) => {
     return {type: GET_MEETUPS, meetups: meetups}
 }
-
+const getMeetupLatLng = (meetup) => {
+    return {type: GET_MEETUP_COORDINATES, coordinates: meetup}
+}
 const getMapDefault = (mapParams) => {
     return{type: DEFAULT_MAP, map: mapParams}
 }
@@ -36,5 +38,5 @@ const axiosGetMeetups = (meetups) => {
     }
 
 }
-export {addMeetup,getMapDefault, getMeetups, updateMeetup, getCategories, axiosGetMeetups, axiosGetCategories}
+export {addMeetup,getMapDefault, getMeetups, updateMeetup, getCategories, axiosGetMeetups, axiosGetCategories, getMeetupLatLng}
 

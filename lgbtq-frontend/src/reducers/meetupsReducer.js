@@ -1,10 +1,12 @@
 import Time from 'redux-time'
-import {ADD_MEETUP, DEFAULT_MAP, UPDATE_MEETUP, GET_MEETUPS, GET_CATEGORIES} from "../actions/actionTypes";
+import {ADD_MEETUP, DEFAULT_MAP, UPDATE_MEETUP, GET_MEETUPS, GET_CATEGORIES, GET_MEETUP_COORDINATES} from "../actions/actionTypes";
 import uuid from 'uuid'
 export default function manageMeetups(state = {
     meetups: [],
     newMeetup: {
         location: '',
+        lat: null,
+        lon: null,
         time: '',
         date: '',
         info: '',
@@ -15,21 +17,39 @@ export default function manageMeetups(state = {
     map: {
         width: '50vh',
         height:'30vw',
+        location: 'Default @@INIT',
         lat:  38.900497,
         lon: -77.007507,
         zoom: [5]
+    },
+    coordinates: {
+     //meetup coordinates for map marker
+        location: '',
+        lat:  null ,
+        lon: null ,
     }
-    // these are the default coordinates
 }, action){
     switch (action.type) {
+        // these are the default coordinates
         case DEFAULT_MAP:
             return {...state, map: {
                 width: '50vw',
                     height: '30vh',
+                    location: 'DEFAULT_MAP COMPLETE',
                     lat: 38.900497,
                     lon: -77.007507,
                     zoom: [5]
                 }}
+
+        //meetup coordinates for map marker
+        case GET_MEETUP_COORDINATES:
+            return {...state,
+                coordinates: {
+                location:  action.location,
+                    lat: action.lat,
+                    lon: action.lon
+                }
+            }
         case GET_MEETUPS:
             return {...state, meetups: action.meetups}
 

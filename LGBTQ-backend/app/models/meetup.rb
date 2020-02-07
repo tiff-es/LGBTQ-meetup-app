@@ -10,6 +10,8 @@ class Meetup < ApplicationRecord
   validates :location, presence: true
   validates :time, presence: true
   validates :date, presence: true
+  #validates :lat, presence: true
+  #validates :lon, presence: true
 
 end
 

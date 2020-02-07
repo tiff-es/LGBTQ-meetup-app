@@ -10,7 +10,7 @@ class MeetupsContainer extends React.Component {
 
 
 
-    componentDidMount() {
+    UNSAFE_componentWillMount() {
         this.props.axiosGetCategories()
         this.props.axiosGetMeetups()
     }
