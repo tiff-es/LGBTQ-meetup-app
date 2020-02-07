@@ -1,8 +1,7 @@
 import React from 'react';
 import './assets/css/App.css';
-import ReactMapboxGl from "react-mapbox-gl";
 import {Router, Switch} from "react-router-dom";
-import Route from "react-router-dom/es/Route";
+import { Route } from "react-router-dom"
 import {connect} from "react-redux";
 import Login from "./components/Login";
 import createHistory from "history/createBrowserHistory";
@@ -12,13 +11,9 @@ import CreateMeetup from "./components/CreateMeetup";
 import UsersContainer from "./containers/UsersContainer";
 
 import NavBar from "./components/NavBar"
-import Users from "./containers/UsersContainer";
 import MeetupsContainer from './containers/MeetupsContainer'
-import {getProfileFetch} from "./actions/user";
-import Layer from "react-mapbox-gl/lib-esm/layer";
-import Feature from "react-mapbox-gl/lib-esm/feature";
+
 import MapComponent from "./components/MapComponent";
-// import mapDispatchToProps from "react-redux/lib/connect/mapDispatchToProps";
 
 
 class App extends React.Component {

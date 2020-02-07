@@ -22,7 +22,7 @@ export const getProfileFetch = () => {
     return dispatch => {
         const token = localStorage.token;
         if (token) {
-            return fetch("http://localhost:3000/api/v1/profile", {
+            return fetch("http://localhost:3000/api/users", {
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json',
@@ -61,9 +61,7 @@ export const userLoginFetch = user => {
             .then(resp => resp.json())
             .then(data => {
                 if (data.message) {
-                    // Here you should have logic to handle invalid login credentials.
-                    // This assumes your Rails API will return a JSON object with a key of
-                    // 'message' if there is an error
+                console.warn(data.message)
                 } else {
                     localStorage.setItem("token", data.jwt)
                     dispatch(loginUser(data.user))
@@ -85,9 +83,7 @@ export const userPostFetch = user => {
             .then(resp => resp.json())
             .then(data => {
                 if (data.message) {
-                    // Here you should have logic to handle invalid creation of a user.
-                    // This assumes your Rails API will return a JSON object with a key of
-                    // 'message' if there is an error with creating the user, i.e. invalid username
+                   console.warn(data.message)
                 } else {
                     localStorage.setItem("token", data.jwt)
                     dispatch(loginUser(data.user))

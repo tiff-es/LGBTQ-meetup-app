@@ -22,7 +22,8 @@ class CreateMeetup extends React.Component{
             lon: lng
         })
     }
-
+// ON SELECTION SELECT => _suggestionSelect handl(result, lat, lon) handleLocationChange, setState with result, lat, lon
+   // omSubmit, post meetup
     handleInputChange = (event) => {
         this.setState({
             [event.target.id]: event.target.value

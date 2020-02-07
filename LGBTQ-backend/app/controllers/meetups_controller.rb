@@ -13,7 +13,7 @@ class MeetupsController < ApplicationController
     @meetup = Meetup.create(meetup_params)
     @category = Category.find_by(name: params[:newMeetup][:category])
     @meetup.update(category_id: @category.id)
-    #end
+
     render json: @meetup
   end
   #find or create by w/ date / Time

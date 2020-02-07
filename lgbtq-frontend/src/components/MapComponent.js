@@ -12,7 +12,7 @@ state = {
     componentDidMount() {
         this.props.getMapDefault()
     }
-    compo
+
 
 
     render() {
@@ -26,6 +26,7 @@ state = {
             <Map
                 zoom={this.props.map.zoom}
                 center={[this.props.lon, this.props.lat]}
+                   // ^^ Center from Lat/Lon that was recieved from MeetupCard  ^^
                 style="mapbox://styles/mapbox/streets-v9"
                 containerStyle={{
                     height: this.props.map.height,
@@ -34,8 +35,9 @@ state = {
             >
 
                 <Layer type="symbol" id="symbol" layout={{ 'icon-image': 'myImage' }} images={images}>
-                    {/*<Feature coordinates={[this.props.map.lon, this.props.map.lat]} />*/}
+                    {/*<  ^^   Feature coordinates={[this.props.map.lon, this.props.map.lat]}   ^^   />*/}
                     <Feature point={[this.props.lon, this.props.lat]} coordinates={[this.props.lon, this.props.lat]}/>
+                {/*   ^^   Lon/Lat set on pointer icon   ^^   */}
                 </Layer>
             </Map>
         )

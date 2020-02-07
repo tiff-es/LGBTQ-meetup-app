@@ -33,13 +33,13 @@ class Login extends React.Component{
                <h2 id='login-header' className='header-raised'> Login</h2>
                 <Form id='login form' onSubmit={this.handleOnSubmit}>
 
-                    <Form.Group id='login form-group username'onChange={this.handleInputChange} controlId="formBasicUsername">
+                    <Form.Group id='login form-group username'onChange={this.handleInputChange} >
                         <Form.Label id='login form-label username'>Username</Form.Label>
                         <Form.Control id='username' type="text" placeholder="Username" />
                     </Form.Group>
 
 
-                    <Form.Group id='login form-group password' onChange={this.handleInputChange} controlId="formBasicPassword">
+                    <Form.Group id='login form-group password' onChange={this.handleInputChange} >
                         <Form.Label id='login form-label password'>Password</Form.Label>
                         <Form.Control id='password' type="password" placeholder="Password" />
                     </Form.Group>

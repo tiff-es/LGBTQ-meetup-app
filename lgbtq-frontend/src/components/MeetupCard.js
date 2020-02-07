@@ -13,6 +13,7 @@ const MeetupCard = (props) => {
             <Card.Subtitle className='header'><h6><b>{props.info}</b> </h6></Card.Subtitle>
             <Card.Body className='header'> Location: <b>{props.location}</b></Card.Body>
             <MapComponent lat={props.lat} lon={props.lon} meetup={props} />
+            {/* ^^  latitude, longitude, props passed down via props  ^^ */}
             <Card.Body className='body'>Start Time: <b><Moment date={props.time} format='hh:mm A'> </Moment></b>
                 <br/>Date: <b><Moment format='ddd MMM DD, YYYY'>{props.date}</Moment></b>
 

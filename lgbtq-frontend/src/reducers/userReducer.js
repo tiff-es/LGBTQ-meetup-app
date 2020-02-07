@@ -22,7 +22,7 @@ export default function manageUsers(state = {
             return {...state, users: [...state.users, action.newUser]}
         case LOGIN_USER:
             return {
-                ...state, currentUser: action.currentUser
+                ...state, user: action.currentUser
             }
         case 'GET_USERS_REQUEST':
             console.log('getting users')
