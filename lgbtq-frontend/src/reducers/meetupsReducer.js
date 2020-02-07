@@ -16,11 +16,11 @@ export default function manageMeetups(state = {
     categories: [],
     map: {
         width: '50vh',
-        height:'30vw',
+        height:'40vw',
         location: 'Default @@INIT',
         lat:  38.900497,
         lon: -77.007507,
-        zoom: [5]
+        zoom: [12]
     },
     coordinates: {
      //meetup coordinates for map marker
@@ -34,11 +34,11 @@ export default function manageMeetups(state = {
         case DEFAULT_MAP:
             return {...state, map: {
                 width: '50vw',
-                    height: '30vh',
+                    height: '40vh',
                     location: 'DEFAULT_MAP COMPLETE',
                     lat: 38.900497,
                     lon: -77.007507,
-                    zoom: [5]
+                    // zoom: [5]
                 }}
 
         //meetup coordinates for map marker
