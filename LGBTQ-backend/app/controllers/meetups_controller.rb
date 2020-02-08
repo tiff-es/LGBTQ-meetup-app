@@ -1,15 +1,12 @@
 class MeetupsController < ApplicationController
+  skip_before_action :require_login
+
   def index
     @meetups = Meetup.all
     render json: @meetups
   end
-
   def create
     #byebug
-    #@meetup = Meetup.find(meetup_params)
-    #if !@meetup
-
-
     @meetup = Meetup.create(meetup_params)
     @category = Category.find_by(name: params[:newMeetup][:category])
     @meetup.update(category_id: @category.id)
@@ -19,6 +16,7 @@ class MeetupsController < ApplicationController
   #find or create by w/ date / Time
 
   def show
+
     @meetup = Meetup.find(params[:id])
     render json: @meetup
   end

@@ -6,6 +6,7 @@ import {Form} from "react-bootstrap";
 import axios from 'axios'
 import {login} from '../actions/login'
 import {userLoginFetch} from "../actions/user";
+// send JWT as a header in every request sent to the backend
 
 
 class Login extends React.Component{
@@ -79,4 +80,4 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-export default connect(null, mapDispatchToProps)(Login)
+export default connect(null ,mapDispatchToProps)(Login)

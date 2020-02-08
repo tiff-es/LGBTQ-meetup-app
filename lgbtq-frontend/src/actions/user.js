@@ -11,7 +11,8 @@ import axios from "axios";
  }
 export const axiosGetUsers = (users) => {
     return dispatch => {
-        axios.get('http://localhost:3000/api/users')
+        axios.get('http://localhost:3000/api/users',{headers:               {  Authorization: window.localStorage.getItem('token')}
+        })
             .then(response => {
                 dispatch(getUsers(response.data))
             })
@@ -27,7 +28,7 @@ export const getProfileFetch = () => {
                 headers: {
                     'Content-Type': 'application/json',
                     Accept: 'application/json',
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': token
                 }
             })
                 .then(resp => resp.json())
@@ -44,30 +45,37 @@ export const getProfileFetch = () => {
     }
 }
 export const loginUser = (userInfo) => {
-    return {type: LOGIN_USER, currentUser: userInfo}
+    return {type: LOGIN_USER, currentUser: {userInfo, isLoggedIn: true}}
 }
 
 
 export const userLoginFetch = user => {
+    // const { setAuthTokens } = useAuth();
+    // const [isLoggedIn, setLoggedIn] = useState(false);
+
     return dispatch => {
         return fetch("http://localhost:3000/api/login", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 Accept: 'application/json',
+                Authorization: window.localStorage.getItem('token')
             },
             body: JSON.stringify({user})
         })
             .then(resp => resp.json())
             .then(data => {
-                if (data.message) {
-                console.warn(data.message)
+                console.log(data)
+                if (data.failure) {
+                console.warn(data.failure)
                 } else {
                     localStorage.setItem("token", data.jwt)
                     dispatch(loginUser(data.user))
                 }
             })
+
     }
+
 }
 
 export const userPostFetch = user => {
@@ -77,6 +85,8 @@ export const userPostFetch = user => {
             headers: {
                 'Content-Type': 'application/json',
                 Accept: 'application/json',
+                Authorization: window.localStorage.getItem('token')
+
             },
             body: JSON.stringify({user})
         })

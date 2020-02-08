@@ -1,7 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './assets/css/App.css';
-import {Router, Switch} from "react-router-dom";
-import { Route } from "react-router-dom"
+import {Route, Router, Switch} from "react-router-dom";
 import {connect} from "react-redux";
 import Login from "./components/Login";
 import createHistory from "history/createBrowserHistory";
@@ -14,43 +13,47 @@ import NavBar from "./components/NavBar"
 import MeetupsContainer from './containers/MeetupsContainer'
 
 import MapComponent from "./components/MapComponent";
+import {AuthContext} from "./auth";
+import PrivateRoute from "./PrivateRoute";
 
 
-class App extends React.Component {
-    // componentDidMount = () => {
-    //     this.props.getProfileFetch()
-    // }
-    render() {
+function App(props) {
+    // localStorage.getItem('token') === nil ? :
+    const history = createHistory()
 
-        const history = createHistory()
-
-        return (
-
+    return (
             <Router history={history}>
                 <div>
                     <NavBar className='navbar'/>
                     <Switch>
+
+                        <PrivateRoute path='/meetups' component={MeetupsContainer} />
+
                         <Route exact path="/" component={Home}/>
                         <Route path="/createaccount" component={CreateAccount}/>
                         <Route path="/createmeetup" component={CreateMeetup}/>
 
                         <Route path="/login" component={Login}/>
+                        {/* Wrap 37-42 in conditional to see if token is in localStorage otherwise route to login*/}
                         <Route path='/users' component={UsersContainer}/>
-                        <Route path='/meetups' component={MeetupsContainer}/>
+                        {/*<Route path='/meetups' component={MeetupsContainer}/>*/}
                         <Route path='/map' component={MapComponent}/>
                         <Route path="/*" component={() => 'NOT FOUND'}/>
                     </Switch>
                 </div>
             </Router>
-        )
 
+    )
+
+}
+
+const mapStateToProps = (state) => {
+    console.log(state)
+
+    return {
+        currnetUser: state.users.currentUser.isLoggedIn
+        // isLoggedIn: state.currentUser
     }
 }
 
-// const mapDispatchToProps = dispatch => ({
-//     getProfileFetch: () => dispatch(getProfileFetch())
-// })
-//
-
-
-export default connect()(App);
+export default connect(mapStateToProps)(App);

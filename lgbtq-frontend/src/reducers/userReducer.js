@@ -3,6 +3,7 @@ import uuid from 'uuid';
 
 export default function manageUsers(state = {
     users: [],
+    isLoggedIn: false,
     currentUser: {},
     newUser: {
         username: '',
@@ -22,7 +23,7 @@ export default function manageUsers(state = {
             return {...state, users: [...state.users, action.newUser]}
         case LOGIN_USER:
             return {
-                ...state, user: action.currentUser
+                ...state, currentUser: action.currentUser, isLoggedIn: true
             }
         case 'GET_USERS_REQUEST':
             console.log('getting users')

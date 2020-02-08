@@ -7,13 +7,15 @@ const getCategories = (categories) => {
     return {type: GET_CATEGORIES, categories: categories}
 }
 const axiosGetCategories = (categories) => {
-return dispatch => {    axios.get('http://localhost:3000/api/categories')
+return dispatch => {    axios.get('http://localhost:3000/api/categories',{headers:               {  Authorization: window.localStorage.getItem('token')}
+})
         .then(response => {
             dispatch(getCategories(response.data))
         })
         .catch(e => console.log(e))
 }
 }
+//if localStorage.JWT does not exist redirect
 const getMeetups = (meetups) => {
     return {type: GET_MEETUPS, meetups: meetups}
 }
@@ -29,7 +31,8 @@ const updateMeetup = (updatedMeetup) => {
 }
 const axiosGetMeetups = (meetups) => {
     return dispatch => {
-        axios.get('http://localhost:3000/api/meetups')
+        axios.get('http://localhost:3000/api/meetups',{headers:               {  Authorization: window.localStorage.getItem('token')}
+    })
             .then(response => {
                 dispatch(getMeetups(response.data))
 
