@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import {userPostFetch} from '../actions/user'
 import 'bootstrap/dist/css/bootstrap.css';
 import {FormGroup, FormText} from "react-bootstrap";
-import Button from "@material-ui/core/Button";
+import {Button} from "mdbreact";
 import {Form} from "react-bootstrap";
 import {CardBody, CardText} from "react-bootstrap/Card";
 import {AxiosInstance as axios} from "axios";

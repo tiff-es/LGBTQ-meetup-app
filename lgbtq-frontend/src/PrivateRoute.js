@@ -9,7 +9,7 @@ const PrivateRoute = ( { component: Component, ...rest }) => (
     <Route {...rest} render={(props) => (
       props.isLoggedIn === true
             ? <Component {...props} />
-            : <Redirect to='/login' />
+            : console.warn('Nope')
     )}
            />
 )
@@ -24,10 +24,10 @@ const mapDispatchToProps = (dispatch) => {
     }
 
 }
+//
+// let mapStateToProps = (state) => {
+//     console.log(state)
+//     return {isLoggedIn: state.users.isLoggedIn}
+// }
 
-let mapStateToProps = (state) => {
-    console.log(state)
-    return {currentUser: state.isLoggedIn}
-}
-
-export default connect(mapDispatchToProps, mapStateToProps)(PrivateRoute);
+export default connect(null, mapDispatchToProps)(PrivateRoute);

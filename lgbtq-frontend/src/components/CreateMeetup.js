@@ -3,7 +3,7 @@ import axios from 'axios'
 import {connect} from 'react-redux'
 import {addMeetup, updateMeetup, getCategories, axiosGetCategories} from "../actions/meetup";
 import {Form, ButtonGroup, FormCheck} from "react-bootstrap";
-import Button from "@material-ui/core/Button";
+import {Button} from "mdbreact";
 // import mapDispatchToProps from "react-redux/lib/connect/mapDispatchToProps";
 import MapboxAutocomplete from 'react-mapbox-autocomplete';
 

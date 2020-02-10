@@ -3,7 +3,7 @@ import {Toolbar, ButtonGroup, MenuList, GridListTileBar, CardHeader, TableHead} 
 import {Route, NavLink, Link,Switch, BrowserRouter as Router} from "react-router-dom";
 import Button from "@material-ui/core/button"
 import pride from '../assets/img/pride.jpg'
-import Navbar from "react-bootstrap/Navbar";
+import {Navbar} from "mdbreact";
 import 'bootstrap/dist/css/bootstrap.css';
 import '../assets/css/navbar.css'
 import {NavbarBrand, NavDropdown} from "react-bootstrap";
@@ -12,7 +12,7 @@ export default class NavBar extends Component {
 
     render(){
         return(
-            <Navbar id='navbar' className='top-nav'>
+            <Navbar id='navbar' className='nav-flex-icons default-color'>
 
                     <NavbarBrand>
                         <img src={pride} style={{width:75, marginTop: -7}} />
@@ -20,7 +20,7 @@ export default class NavBar extends Component {
                     </NavbarBrand>
 
 
-                <NavLink to="/"><Button className='navbar-btn'><div className='nav-link'>Home</div></Button></NavLink>
+                <NavLink to="/"><Button className='nav-item'><div className='nav-link'>Home</div></Button></NavLink>
                 <NavLink to="/createaccount"><Button className='navbar-btn'><div className='nav-link'>Create Account</div></Button></NavLink>
                 <NavLink to="/login"><Button className='navbar-btn'><div className='nav-link'>Login</div></Button></NavLink>
                 <NavLink to="/meetups"><Button className='navbar-btn'><div className='nav-link'>Meetups</div></Button></NavLink>

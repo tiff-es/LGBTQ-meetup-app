@@ -1,4 +1,4 @@
-import {GET_USERS, LOGIN_USER} from "./actionTypes";
+import {GET_USERS, LOGIN_USER, AUTHENTICATION_ERROR, AUTHENTICATED, LOGIN_AUTHENTICATED} from "./actionTypes";
 import axios from "axios";
 
 // const addUser = (newUser) => {
@@ -45,7 +45,7 @@ export const getProfileFetch = () => {
     }
 }
 export const loginUser = (userInfo) => {
-    return {type: LOGIN_USER, currentUser: {userInfo, isLoggedIn: true}}
+    return {type: LOGIN_AUTHENTICATED, currentUser: {userInfo}}
 }
 
 
@@ -67,7 +67,7 @@ export const userLoginFetch = user => {
             .then(data => {
                 console.log(data)
                 if (data.failure) {
-                console.warn(data.failure)
+                dispatch(authError(data.failure))
                 } else {
                     localStorage.setItem("token", data.jwt)
                     dispatch(loginUser(data.user))
@@ -77,7 +77,13 @@ export const userLoginFetch = user => {
     }
 
 }
+export const authError = error => {
+     return {type: AUTHENTICATION_ERROR, error: error }
+}
 
+export const authenticated = () => {
+     return {type: AUTHENTICATED}
+}
 export const userPostFetch = user => {
     return dispatch => {
         return fetch("http://localhost:3000/api/users", {

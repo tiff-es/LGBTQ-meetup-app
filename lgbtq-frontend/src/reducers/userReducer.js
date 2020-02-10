@@ -1,9 +1,10 @@
-import {ADD_USER, GET_USERS, LOGIN, LOGIN_USER} from "../actions/actionTypes";
+import {ADD_USER, GET_USERS, AUTHENTICATION_ERROR, LOGIN_AUTHENTICATED, AUTHENTICATED} from "../actions/actionTypes";
 import uuid from 'uuid';
 
 export default function manageUsers(state = {
     users: [],
-    isLoggedIn: false,
+    authenticated: false,
+    error: '',
     currentUser: {},
     newUser: {
         username: '',
@@ -21,10 +22,16 @@ export default function manageUsers(state = {
         case ADD_USER:
 
             return {...state, users: [...state.users, action.newUser]}
-        case LOGIN_USER:
+
+        case AUTHENTICATED:
+            return {...state, error: '', authenticated: true}
+
+            case LOGIN_AUTHENTICATED:
             return {
-                ...state, currentUser: action.currentUser, isLoggedIn: true
+                ...state, error: '', currentUser: action.currentUser, authenticated: true
             }
+        case AUTHENTICATION_ERROR:
+            return {...state,error: action.error,authenticated: false}
         case 'GET_USERS_REQUEST':
             console.log('getting users')
         case 'GET_USERS_SUCCESS':
