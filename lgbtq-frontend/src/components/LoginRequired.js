@@ -5,6 +5,7 @@ import {Card, MDBLink, NavLink} from "mdbreact";
 // import {MDBAlert, MDBBtn, MDBCardHeader} from 'mdbreact'
 import {Alert} from "mdbreact";
 import {Button} from "mdbreact";
+import Home from "./Home";
 
 export default class LoginRequired extends Component {
     componentDidMount() {
@@ -12,7 +13,7 @@ export default class LoginRequired extends Component {
     }
     render() {
         return (
-
+           <div> <Home/>
             <Card className='card'>
                 <Alert className='alert-warning'>To continue –– please either <b>create an account</b>, or <b>log in</b>!</Alert>
 
@@ -21,6 +22,7 @@ export default class LoginRequired extends Component {
 
 
             </Card>
+           </div>
 
 
         )

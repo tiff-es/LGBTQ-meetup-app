@@ -16,7 +16,7 @@
 * Material UI
 * Bootstrap
   * React-Bootstrap
-* Semantic
+* [Material Design Bootstrap React (MDB Rect)](https://react.mdbootstrap.com/)
 #### Node Packages and Dependencies Installed:
 * redux Thunk
 * [react-mapbox-autocomplete](https://www.npmjs.com/package/react-mapbox-autocomplete)
@@ -30,6 +30,7 @@
     * Best/easiest experience I've encountered using Mapbox in React/Redux (as opposed to: standard mapbox-gl-js and react-map-gl)
 * [react-bootstrap](https://react-bootstrap.github.io/)
 * [Material UI](https://material-ui.com/)
+* [MDB React](https://react.mdbootstrap.com/)
 * [react-router-redux](https://github.com/reactjs/react-router-redux)
 #### JavaScript Dependencies:
 * @material-ui/core": ^4.8.3

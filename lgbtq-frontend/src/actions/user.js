@@ -1,4 +1,11 @@
-import {GET_USERS, LOGIN_USER, AUTHENTICATION_ERROR, AUTHENTICATED, LOGIN_AUTHENTICATED} from "./actionTypes";
+import {
+    GET_USERS,
+    LOGIN_USER,
+    AUTHENTICATION_ERROR,
+    AUTHENTICATED,
+    LOGIN_AUTHENTICATED,
+    SAVE_USER
+} from "./actionTypes";
 import axios from "axios";
 
 // const addUser = (newUser) => {
@@ -6,6 +13,10 @@ import axios from "axios";
 // };
 //  export {addUser}
 
+export function saveUser(user) {
+    return {type: SAVE_USER, currentUser: user}
+
+}
  export function getUsers(users) {
      return { type: GET_USERS, users: users }
  }
@@ -45,7 +56,9 @@ export const getProfileFetch = () => {
     }
 }
 export const loginUser = (userInfo) => {
-    return {type: LOGIN_AUTHENTICATED, currentUser: {userInfo}}
+    return {type: LOGIN_AUTHENTICATED, currentUser: {userInfo}
+    }
+
 }
 
 
@@ -102,6 +115,7 @@ export const userPostFetch = user => {
                    console.warn(data.message)
                 } else {
                     localStorage.setItem("token", data.jwt)
+                    dispatch(saveUser(data.user))
                     dispatch(loginUser(data.user))
                 }
             })

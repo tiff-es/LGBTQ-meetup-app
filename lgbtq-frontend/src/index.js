@@ -23,6 +23,7 @@ import {AUTHENTICATED} from "./actions/actionTypes";
 import requireAuth from "./components/hoc/RequireAuth";
 import noRequireAuth from "./components/hoc/NoRequireAuth";
 import LoginRequired from "./components/LoginRequired";
+import UserProfilePage from "./components/UserProfilePage";
 
 const store = configureStore()
 const history = createHistory()
@@ -43,7 +44,7 @@ ReactDOM.render(
                     <Route path="/createmeetup" component={requireAuth(CreateMeetup)}/>
                     <Route path="/login" component={noRequireAuth(Login)}/>
                     {/* Wrap 37-42 in conditional to see if token is in localStorage otherwise route to login*/}
-                    <Route path='/users' component={requireAuth(UsersContainer)}/>
+                    <Route path='/myprofile' component={requireAuth(UserProfilePage)}/>
                     {/*<Route path='/meetups' component={MeetupsContainer}/>*/}
                     <Route path='/map' component={MapComponent}/>
                 <Route path='/loginrequired' component={noRequireAuth(LoginRequired)}/>

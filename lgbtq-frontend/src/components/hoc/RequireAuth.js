@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 export default function (ComposedComponent) {
     class Authentication extends Component {
-        componentWillMount() {
+        componentDidMount() {
             if (!this.props.authenticated) {
                 this.props.history.push('/loginRequired');
             }

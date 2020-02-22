@@ -26,15 +26,6 @@ class CreateAccount extends React.Component{
 
     }
 
-    // addUser = (newUser) => {
-    //     axios.post('localhost:3000/api/users', {newUser: newUser})
-    //             .then(response => {
-    //                 this.props.addUser(response.data)
-    //             })
-    //             .catch(error => console.log(error))
-    //
-    // }
-
 
 
     handleOnSubmit = (event) => {
@@ -61,7 +52,7 @@ class CreateAccount extends React.Component{
                         <Form.Label id='create-account form-label password'>Password</Form.Label>
                         <Form.Control id='password' type="password" placeholder="Create Password" />
                     </Form.Group>
-<br/>
+                    <br/>
                     <FormText id='create-account form-text'><h5 id='create-account tell-us-about-yourself text'>Tell Us About Yourself!</h5></FormText>
 
                     <Form.Group id='create-account form-group name' onChange={this.handleInputChange} controlId="formBasicName">
@@ -97,11 +88,6 @@ class CreateAccount extends React.Component{
 
 }
 
-// let mapStateToProps = (state) => {
-//     return {newUser: state.newUser
-//
-//         }
-// }
 const mapDispatchToProps = (dispatch) => {
     return {
         userPostFetch: (userInfo) => {

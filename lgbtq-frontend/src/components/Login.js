@@ -2,8 +2,8 @@ import React from "react";
 import {Toolbar, GridList, BottomNavigation} from "@material-ui/core";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
-import {Form} from "react-bootstrap";
-import {Button} from "mdbreact";
+import {Alert, Form, Popover} from "react-bootstrap";
+import {Button, MDBAlert} from "mdbreact";
 
 import axios from 'axios'
 import {login} from '../actions/login'
@@ -14,8 +14,7 @@ import {userLoginFetch} from "../actions/user";
 class Login extends React.Component{
     state = {
         username: "",
-        password: ""
-    }
+        password: ""}
 
 
     handleInputChange = (event) => {
@@ -24,16 +23,24 @@ class Login extends React.Component{
         } );
     }
 
-     handleOnSubmit = (event) => {
-         event.preventDefault();
+    handleOnSubmit = (event) => {
+        event.preventDefault();
         this.props.userLoginFetch(this.state)
-         // this.props.dispatch({type: 'LOGIN', currentUser: {username: this.state.username, password: this.state.username}})    }
-     }
+
+        // this.props.dispatch({type: 'LOGIN', currentUser: {username: this.state.username, password: this.state.username}})    }
+    }
     //wire up mapDispatchToProps
     render() {
         return(
             <div id='login main-container' className='modal-body'>
-               <h2 id='login-header' className='header-raised'> Login</h2>
+                { (this.props.error) ?
+                    <Alert className="alert alert-danger" role="alert">
+                        {this.props.error}
+                    </Alert> : ''}
+
+
+
+                <h2 id='login-header' className='header-raised'> Login</h2>
                 <Form id='login form' onSubmit={this.handleOnSubmit}>
 
                     <Form.Group id='login form-group username'onChange={this.handleInputChange} >
@@ -52,25 +59,17 @@ class Login extends React.Component{
             </div>
 
 
-      )
+        )
 
     }
 
-
 }
 
-
-// const structuredSelector = createStructuredSelector({
-//     users: state => state.users
-// })
-
-// const mapStateToProps = (state) => {
-//     return {
-//         currentUser:{
-//             password: state.password,
-//             username: state.username}
-//     }
-// }
+const mapStateToProps = (state) => {
+    return {
+        error: state.users.error
+    }
+}
 const mapDispatchToProps = (dispatch) => {
     return {
         userLoginFetch: (userInfo) => {
@@ -79,7 +78,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 }
 
-
-
-
-export default connect(null ,mapDispatchToProps)(Login)
+export default connect(mapStateToProps ,mapDispatchToProps)(Login)

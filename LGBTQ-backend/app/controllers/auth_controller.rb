@@ -1,4 +1,4 @@
-class AuthController < ApplicationController
+ class AuthController < ApplicationController
   skip_before_action :require_login, only: [:login, :auto_login]
   def login
     #byebug

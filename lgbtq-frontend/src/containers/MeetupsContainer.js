@@ -16,11 +16,12 @@ class MeetupsContainer extends React.Component {
     }
 
 
-
+med
     render() {
 
         return(
     <div>
+        <h1  className='title'>Meetups</h1>
         <Meetups meetups={this.props.meetups.meetups}/>
     </div>
         )

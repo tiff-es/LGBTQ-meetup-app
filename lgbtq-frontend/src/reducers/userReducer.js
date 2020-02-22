@@ -1,11 +1,17 @@
-import {ADD_USER, GET_USERS, AUTHENTICATION_ERROR, LOGIN_AUTHENTICATED, AUTHENTICATED} from "../actions/actionTypes";
+import {
+    ADD_USER,
+    GET_USERS,
+    AUTHENTICATION_ERROR,
+    LOGIN_AUTHENTICATED,
+    AUTHENTICATED,
+    SAVE_USER
+} from "../actions/actionTypes";
 import uuid from 'uuid';
 
 export default function manageUsers(state = {
     users: [],
     authenticated: false,
     error: '',
-    currentUser: {},
     newUser: {
         username: '',
         password: '',
@@ -17,6 +23,8 @@ export default function manageUsers(state = {
     }
 }, action){
     switch (action.type) {
+        case SAVE_USER:
+            return {...state, currentUser: action.user }
         case GET_USERS:
             return {...state, users: action.users}
         case ADD_USER:
