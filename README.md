@@ -33,36 +33,39 @@
 * [MDB React](https://react.mdbootstrap.com/)
 * [react-router-redux](https://github.com/reactjs/react-router-redux)
 #### JavaScript Dependencies:
-* @material-ui/core": ^4.8.3
-* @material-ui/styles: ^4.8.2
-* @testing-library/jest-dom: ^4.2.4
-* @testing-library/react: ^9.3.2
-* @testing-library/user-event: ^7.1.2
-* axios: ^0.19.1
-* bootstrap: ^4.4.1
-* expect: latest
-* history: latest
-* mapbox-gl: ^1.7.0
-* mocha: ^7.0.0
-* moment: ^2.24.0
-* prop-types: latest
-* rc-datetime-picker: ^1.6.1
-* react: ^16.12.0
-* react-bootstrap: ^1.0.0-beta.16
-* react-datetime: ^2.16.3
-* react-dom: ^16.12.0
-* react-map-gl: ^5.2.2
-* react-mapbox-autocomplete: ^0.2.3
-* react-mapbox-gl: ^4.8.2
-* react-router: latest
-* react-router-bootstrap: ^0.25.0
-* react-router-redux: ^4.0.8
-* react-scripts: 3.3.0
-* react-time: ^4.3.0
-* redux: ^4.0.5
-* redux-thunk: ^2.3.0
-* redux-time: 0.0.29
-* semantic: 0.0.1
+*  material-ui/core: ^4.8.3
+*    @material-ui/styles: ^4.8.2
+*    @testing-library/jest-dom: ^4.2.4
+*    @testing-library/react: ^9.3.2
+*    @testing-library/user-event: ^7.1.2
+*    axios: ^0.19.1
+*    bootstrap: ^4.4.1
+*    bower: ^1.8.8
+*    expect: latest
+*    history: latest
+*    mapbox-gl: ^1.7.0
+*    material-kit-react: ^1.8.0
+*    mdbreact: ^4.25.1
+*    mocha: ^7.0.0
+*    moment: ^2.24.0
+*    prop-types: latest
+*    rc-datetime-picker: ^1.6.1
+*    react: ^16.12.0
+*    react-bootstrap: ^1.0.0-beta.16
+*    react-datetime: ^2.16.3
+*    react-dom: ^16.12.0
+*    react-map-gl: ^5.2.2
+*    react-mapbox-autocomplete: ^0.2.3
+*    react-mapbox-gl: ^4.8.2
+*    react-router: latest
+*    react-router-bootstrap: ^0.25.0
+*    react-router-redux: ^4.0.8
+*    react-scripts: 3.3.0
+*    react-time: ^4.3.0
+*    redux: ^4.0.5
+*    redux-thunk: ^2.3.0
+*    redux-time: 0.0.29
+*    semantic: 0.0.1
   
 
 ---
@@ -82,7 +85,7 @@
   * listen (>= 3.0.5 < 3.2)
  *  pg
  *  puma (~> 4.1)
-  * rails (~> 6.0.2, >= 6.0.2.1)
+  * rails (~> 6.0.2 >= 6.0.2.1)
  *  spring
   * spring-watcher-listen (~> 2.0.0)
   * tzinfo-data
@@ -90,4 +93,4 @@
   *  ruby version (2.6.1p33)
 ----
 ###### Contact:
-###### For any questions or information about this project, feel free to contact me, Tiffany J Abraham, at tifftiff.email@gmail.com.
+###### For any questions or information about this project feel free to contact me, Tiffany J Abraham, at tifftiff.email@gmail.com.
