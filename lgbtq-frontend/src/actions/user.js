@@ -5,7 +5,7 @@ import {
     AUTHENTICATED,
     LOGIN_AUTHENTICATED,
     SAVE_USER,
-    SUCCESS_MESSAGE
+    SUCCESS_MESSAGE, CLEAR_MESSAGE
 } from "./actionTypes";
 import axios from "axios";
 
@@ -13,6 +13,10 @@ import axios from "axios";
 //     return { type: ADD_USER, newUser: newUser }
 // };
 //  export {addUser}
+export function clearMessage() {
+    return {type: CLEAR_MESSAGE, error: '', success: ''}
+
+}
 
 export function saveUser(user) {
     return {type: SAVE_USER, currentUser: user}

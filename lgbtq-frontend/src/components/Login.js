@@ -7,7 +7,7 @@ import {Button, MDBAlert} from "mdbreact";
 
 import axios from 'axios'
 import {login} from '../actions/login'
-import {userLoginFetch} from "../actions/user";
+import {clearMessage, userLoginFetch} from "../actions/user";
 // send JWT as a header in every request sent to the backend
 
 
@@ -18,6 +18,9 @@ class Login extends React.Component{
         success: ''
     }
 
+componentWillUnmount(){
+    this.props.clearMessage()
+}
 
     handleInputChange = (event) => {
         this.setState({
@@ -29,7 +32,9 @@ class Login extends React.Component{
         event.preventDefault();
         this.props.userLoginFetch(this.state)
 
-         setTimeout(() => {this.props.history.push('/')}, 2000)
+         setTimeout(() => {this.props.history.push('/') && this.props.clearMessage() }, 2000)
+
+
         // this.props.dispatch({type: 'LOGIN', currentUser: {username: this.state.username, password: this.state.username}})    }
     }
     //wire up mapDispatchToProps
@@ -37,14 +42,15 @@ class Login extends React.Component{
         return(
             <div id='login main-container' className='modal-body'>
                 { (this.props.error) ?
-                    <MDBAlert className="alert alert-danger" role="alert">
+                    <MDBAlert id='success-alert'className="alert alert-danger" role="alert">
                         {this.props.error}
                     </MDBAlert> : ''}
 
-                { (this.props.success) ?
-                    <MDBAlert className="alert alert-success" role="alert">
-                        You're Logged In! <br/> {this.props.success}
+                { (this.props.success !== '') ?
+                    <MDBAlert id='success-alert' className="alert alert-success" role="alert">
+                        You're Logged In! <br/>      {this.props.success}
                     </MDBAlert> : ''}
+                {}
 
 
 
@@ -83,7 +89,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         userLoginFetch: (userInfo) => {
             dispatch(userLoginFetch(userInfo))
-        }
+        },
+        clearMessage: () => {dispatch(clearMessage())}
     };
 }
 

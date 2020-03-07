@@ -5,7 +5,8 @@ import {
     LOGIN_AUTHENTICATED,
     AUTHENTICATED,
     SAVE_USER,
-    SUCCESS_MESSAGE
+    SUCCESS_MESSAGE,
+    CLEAR_MESSAGE
 } from "../actions/actionTypes";
 import uuid from 'uuid';
 
@@ -44,6 +45,8 @@ export default function manageUsers(state = {
             return {...state,error: action.error,authenticated: false}
         case SUCCESS_MESSAGE:
             return {...state, success: action.success}
+        case CLEAR_MESSAGE:
+            return {...state, error: '', success: ''}
         case 'GET_USERS_REQUEST':
             console.log('getting users')
         case 'GET_USERS_SUCCESS':
