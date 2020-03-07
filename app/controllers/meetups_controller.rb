@@ -1,14 +1,22 @@
 class MeetupsController < ApplicationController
+  skip_before_action :require_login
+
   def index
     @meetups = Meetup.all
     render json: @meetups
   end
-
   def create
-    @meetup = Meetup.new(meetup_params)
+    #byebug
+    @meetup = Meetup.create(meetup_params)
+    @category = Category.find_by(name: params[:newMeetup][:category])
+    @meetup.update(category_id: @category.id)
+
+    render json: @meetup
   end
+  #find or create by w/ date / Time
 
   def show
+
     @meetup = Meetup.find(params[:id])
     render json: @meetup
   end
@@ -20,6 +28,10 @@ class MeetupsController < ApplicationController
 
   private
   def meetup_params
-    params.permit(:location, :category_id, :time, :date, :info )
+    params.require(:newMeetup).permit(:category_id, :location, :lat, :lon, :time, :date, :info, :name)
   end
+
+  # def request_mapbox
+  #
+  # end
 end
