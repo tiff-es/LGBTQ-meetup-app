@@ -29,7 +29,7 @@ class Login extends React.Component{
         event.preventDefault();
         this.props.userLoginFetch(this.state)
 
-         setTimeout(() => {this.props.history.push('/') }, 2000)
+         setTimeout(() => {this.props.history.push('/')}, 2000)
         // this.props.dispatch({type: 'LOGIN', currentUser: {username: this.state.username, password: this.state.username}})    }
     }
     //wire up mapDispatchToProps
@@ -43,7 +43,7 @@ class Login extends React.Component{
 
                 { (this.props.success) ?
                     <MDBAlert className="alert alert-success" role="alert">
-                        Login Successful! {this.props.success}
+                        You're Logged In! <br/> {this.props.success}
                     </MDBAlert> : ''}
 
 
