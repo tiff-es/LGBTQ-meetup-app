@@ -4,7 +4,8 @@ import {
     AUTHENTICATION_ERROR,
     AUTHENTICATED,
     LOGIN_AUTHENTICATED,
-    SAVE_USER
+    SAVE_USER,
+    SUCCESS_MESSAGE
 } from "./actionTypes";
 import axios from "axios";
 
@@ -56,7 +57,7 @@ export const getProfileFetch = () => {
     }
 }
 export const loginUser = (userInfo) => {
-    return {type: LOGIN_AUTHENTICATED, currentUser: {userInfo}
+    return {type: LOGIN_AUTHENTICATED, currentUser: {userInfo}, success: 'Login Successful'
     }
 
 }
@@ -81,9 +82,11 @@ export const userLoginFetch = user => {
                 console.log(data)
                 if (data.failure) {
                 dispatch(authError(data.failure))
+
                 } else {
                     localStorage.setItem("token", data.jwt)
                     dispatch(loginUser(data.user))
+                    dispatch(loginSuccess(data.success))
                 }
             })
 
@@ -91,9 +94,12 @@ export const userLoginFetch = user => {
 
 }
 export const authError = error => {
-     return {type: AUTHENTICATION_ERROR, error: error }
+     return {type: AUTHENTICATION_ERROR, error: error, success: '' }
 }
 
+export const loginSuccess = success => {
+    return {type: SUCCESS_MESSAGE, success: success }
+}
 export const authenticated = () => {
      return {type: AUTHENTICATED}
 }

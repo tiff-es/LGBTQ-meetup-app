@@ -30,16 +30,19 @@ const updateMeetup = (updatedMeetup) => {
     return {type: UPDATE_MEETUP, updatedMeetup}
 }
 const axiosGetMeetups = (meetups) => {
+    // console.log('c')
     return dispatch => {
         axios.get('http://localhost:3000/api/meetups',{headers:               {  Authorization: window.localStorage.getItem('token')}
     })
             .then(response => {
+                console.log('d')
                 dispatch(getMeetups(response.data))
 
             })
             .catch(e => console.warn(e))
+        console.log('hey')
     }
-
+    // console.log('e')
 }
 export {addMeetup,getMapDefault, getMeetups, updateMeetup, getCategories, axiosGetMeetups, axiosGetCategories, getMeetupLatLng}
 

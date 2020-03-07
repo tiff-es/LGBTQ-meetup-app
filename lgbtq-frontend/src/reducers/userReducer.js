@@ -4,7 +4,8 @@ import {
     AUTHENTICATION_ERROR,
     LOGIN_AUTHENTICATED,
     AUTHENTICATED,
-    SAVE_USER
+    SAVE_USER,
+    SUCCESS_MESSAGE
 } from "../actions/actionTypes";
 import uuid from 'uuid';
 
@@ -12,6 +13,7 @@ export default function manageUsers(state = {
     users: [],
     authenticated: false,
     error: '',
+    success: '',
     newUser: {
         username: '',
         password: '',
@@ -36,10 +38,12 @@ export default function manageUsers(state = {
 
             case LOGIN_AUTHENTICATED:
             return {
-                ...state, error: '', currentUser: action.currentUser, authenticated: true
+                ...state, success: action.success, error: '', currentUser: action.currentUser.userInfo,  authenticated: true
             }
         case AUTHENTICATION_ERROR:
             return {...state,error: action.error,authenticated: false}
+        case SUCCESS_MESSAGE:
+            return {...state, success: action.success}
         case 'GET_USERS_REQUEST':
             console.log('getting users')
         case 'GET_USERS_SUCCESS':

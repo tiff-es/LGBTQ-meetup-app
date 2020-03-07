@@ -12,7 +12,9 @@ class MeetupsContainer extends React.Component {
 
     UNSAFE_componentWillMount() {
         this.props.axiosGetCategories()
+        // console.log('a')
         this.props.axiosGetMeetups()
+        // console.log('b')
     }
 
 

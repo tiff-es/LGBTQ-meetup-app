@@ -14,7 +14,9 @@ import {userLoginFetch} from "../actions/user";
 class Login extends React.Component{
     state = {
         username: "",
-        password: ""}
+        password: "",
+        success: ''
+    }
 
 
     handleInputChange = (event) => {
@@ -26,6 +28,7 @@ class Login extends React.Component{
     handleOnSubmit = (event) => {
         event.preventDefault();
         this.props.userLoginFetch(this.state)
+        this.props.history.push('/')
 
         // this.props.dispatch({type: 'LOGIN', currentUser: {username: this.state.username, password: this.state.username}})    }
     }
@@ -34,9 +37,14 @@ class Login extends React.Component{
         return(
             <div id='login main-container' className='modal-body'>
                 { (this.props.error) ?
-                    <Alert className="alert alert-danger" role="alert">
+                    <MDBAlert className="alert alert-danger" role="alert">
                         {this.props.error}
-                    </Alert> : ''}
+                    </MDBAlert> : ''}
+
+                { (this.props.success) ?
+                    <MDBAlert className="alert alert-success" role="alert">
+                        Login Successful! {this.props.success}
+                    </MDBAlert> : ''}
 
 
 
@@ -67,7 +75,8 @@ class Login extends React.Component{
 
 const mapStateToProps = (state) => {
     return {
-        error: state.users.error
+        error: state.users.error,
+        success: state.users.success
     }
 }
 const mapDispatchToProps = (dispatch) => {
