@@ -45,6 +45,11 @@ GEM
     activerecord (6.0.2.1)
       activemodel (= 6.0.2.1)
       activesupport (= 6.0.2.1)
+    activerecord-jdbc-adapter (50.0)
+      activerecord (>= 2.2)
+    activerecord-jdbcpostgresql-adapter (50.0)
+      activerecord-jdbc-adapter (~> 50.0)
+      jdbc-postgres (>= 9.4, < 43)
     activestorage (6.0.2.1)
       actionpack (= 6.0.2.1)
       activejob (= 6.0.2.1)
@@ -79,6 +84,7 @@ GEM
       domain_name (~> 0.5)
     i18n (1.8.1)
       concurrent-ruby (~> 1.0)
+    jdbc-postgres (42.2.6)
     jwt (2.2.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -189,6 +195,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-jdbcpostgresql-adapter
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   byebug
