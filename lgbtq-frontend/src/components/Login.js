@@ -28,8 +28,8 @@ class Login extends React.Component{
     handleOnSubmit = (event) => {
         event.preventDefault();
         this.props.userLoginFetch(this.state)
-        this.props.history.push('/')
 
+         setTimeout(() => {this.props.history.push('/') }, 2000)
         // this.props.dispatch({type: 'LOGIN', currentUser: {username: this.state.username, password: this.state.username}})    }
     }
     //wire up mapDispatchToProps
