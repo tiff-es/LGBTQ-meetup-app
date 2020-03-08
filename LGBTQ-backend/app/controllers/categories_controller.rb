@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new(category_params)
+    @category = Category.create_or_find_by(category_params)
     render json: @category
   end
 
@@ -21,6 +21,6 @@ class CategoriesController < ApplicationController
 
   private
   def category_params
-    params.require(:category).permit(:category)
+    params.require(:category).permit(:name, :category_id)
   end
 end
