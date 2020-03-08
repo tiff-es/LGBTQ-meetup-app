@@ -9,6 +9,7 @@
 #User.destroy_all
 #Category.destroy_all
 #Meetup.destroy_all
+# \
 
 User.create_or_find_by(id: 18, name: 'Tiffany', picture: 'https://media-exp1.licdn.com/dms/image/C4D03AQFxelN7X2pP-A/profile-displayphoto-shrink_200_200/0?e=1583971200&v=beta&t=zSCOXIkU-rd3PEXJpkTeucjMfRsemZBtUKitN82yR9k',
                             bio: 'I made this app!', pronouns: 'she/her', username: 'boostinWRX', password_digest: '0123')
