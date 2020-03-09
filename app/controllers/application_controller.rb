@@ -1,5 +1,11 @@
 class ApplicationController < ActionController::API
+  before_action :allow_cross_domain_ajax
   before_action :require_login
+
+    def allow_cross_domain_ajax
+      headers['Access-Control-Allow-Origin'] = '*'
+      headers['Access-Control-Request-Method'] = 'POST, OPTIONS'
+    end
 
   #skip_before_action :require_login, only: [:cors_set_access_control_headers, :cors_preflight_check]
   #before_filter :cors_preflight_check
