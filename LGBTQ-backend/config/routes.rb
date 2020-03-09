@@ -7,10 +7,6 @@ Rails.application.routes.draw do
   #  post 'meetups', to: 'meetups#create'
   #end
 
-<<<<<<< HEAD
-  #root 'heroku_test_controller#index'
-=======
->>>>>>> heroku-build
 
 
   scope '/api' do
