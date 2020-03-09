@@ -2,6 +2,8 @@ class ApplicationController < ActionController::API
   before_action :require_login
 
   skip_before_action :require_login, only: [:cors_set_access_control_headers, :cors_preflight_check]
+  before_filter :cors_preflight_check
+  after_filter :cors_set_access_control_headers
 
 
   def cors_set_access_control_headers
