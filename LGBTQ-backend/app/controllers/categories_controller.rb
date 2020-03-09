@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+git pclass CategoriesController < ApplicationController
   def index
     @categories = Category.all
     render json: @categories
