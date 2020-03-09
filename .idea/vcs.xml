@@ -8,6 +8,7 @@
     <mapping directory="$PROJECT_DIR$/backend/LGBTQ-backend" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lgbtq-frontend" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lgbtq-frontend/lgbtq-meet" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lgbtq-frontend/lgbtq-meetups-frontend" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/shrouded-beach-63012" vcs="Git" />
   </component>
 </project>
