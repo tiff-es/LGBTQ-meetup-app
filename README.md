@@ -1,11 +1,10 @@
 # LGBTQ-meetup-app
 ### My Flatiron School Final Project
  
- ### This repository includes both the frontend and backend (in their respective directories), for the functional Heroku hosted version, visit: [https://lgbtq-meetups.herokuapp.com/](LGBTQ-Meetups Link)
+ ### This repository includes *both* the frontend, and backend (in their respective directories). For the functional Heroku hosted version, visit: [LGBTQ-Meetups Link](https://lgbtq-meetups.herokuapp.com/) 
+### [See Heroku-Hosted Frontend Repository](https://github.com/boostinwrx/lgtbtq-meetups-frontend)
  
  
-
-
  #### App Description:
 * Finally, a safe space for the LGBTQ+ community to create and find social meetups with gender affirming, supportive people near you!
   
