@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     render json: @users
+
   end
 
   def create
@@ -17,11 +18,14 @@ class UsersController < ApplicationController
     else
       render json: {errors: user.errors.full_messages}, status: :not_acceptable
     end
-  end 
+  end
 
   def show
+
     @user = User.find(params[:id])
     render json: @user
+    @user_meetups = @user.meetups
+
   end
 
   def update
@@ -31,6 +35,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:id, :username, :password, :name,:picture,:bio, :pronouns)
+    params.require(:user).permit(:id, :username, :password, :name,:picture,:bio, :pronouns, :user_meetups)
   end
 end
