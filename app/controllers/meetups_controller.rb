@@ -6,7 +6,8 @@ class MeetupsController < ApplicationController
     render json: @meetups
   end
   def create
-    #byebug
+    byebug
+    #
     @meetup = Meetup.create(meetup_params)
     @category = Category.find_by(name: params[:newMeetup][:category])
     @meetup.update(category_id: @category.id)

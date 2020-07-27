@@ -9,7 +9,6 @@ class CreateMeetups < ActiveRecord::Migration[6.0]
       t.date :date
       t.text :info
       t.integer :category_id
-
       t.timestamps
     end
   end

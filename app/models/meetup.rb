@@ -5,7 +5,7 @@
 class Meetup < ApplicationRecord
   has_one :category
   has_many :users_meetups
-  has_many :users, through: :users_meetups
+  has_one :user, through: :users_meetups
   validates :name, presence: true
   validates :location, presence: true
   validates :time, presence: true

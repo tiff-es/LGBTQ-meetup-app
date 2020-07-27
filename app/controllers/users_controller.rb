@@ -9,8 +9,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+
     if @user.valid?
-      #byebug
+
       payload = {user_id: @user.id}
       token = encode_token(payload)
       puts token
@@ -24,8 +25,9 @@ class UsersController < ApplicationController
 
     @user = User.find(params[:id])
     render json: @user
+    #byebug
     @user_meetups = @user.meetups
-
+    byebug
   end
 
   def update

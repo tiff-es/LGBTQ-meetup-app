@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   scope '/api' do
     resources :users, only: [:create, :index, :show]
     resources :categories, :meetups
+    get '/user_profile', to: 'user#show'
     post '/login', to: 'auth#login'
     get '/auto_login', to: 'auth#auto_login'
     get '/user_is_authed', to: 'auth#user_is_authed'
