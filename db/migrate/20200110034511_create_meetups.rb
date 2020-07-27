@@ -9,6 +9,8 @@ class CreateMeetups < ActiveRecord::Migration[6.0]
       t.date :date
       t.text :info
       t.integer :category_id
+      # t.integer :user_id
+      t.belongs_to :user
       t.timestamps
     end
   end

@@ -35,8 +35,10 @@ ActiveRecord::Schema.define(version: 2020_02_04_200941) do
     t.date "date"
     t.text "info"
     t.integer "category_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_meetups_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,8 +53,10 @@ ActiveRecord::Schema.define(version: 2020_02_04_200941) do
   end
 
   create_table "users_meetups", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "meetup_id"
+    t.bigint "user_id"
+    t.bigint "meetup_id"
+    t.index ["meetup_id"], name: "index_users_meetups_on_meetup_id"
+    t.index ["user_id"], name: "index_users_meetups_on_user_id"
   end
 
 end

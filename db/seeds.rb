@@ -19,8 +19,8 @@ Category.create_or_find_by(id: 0, name: 'Transgender/Genderqueer')
 Category.create_or_find_by(id: 1, name: 'Lesbian')
 Category.create_or_find_by(id: 2, name: 'Gay')
 
-Meetup.create_or_find_by(id: 0, category_id: 0, lat:38.820450 ,lon:-77.050552 ,location: 'Alexandria,VA', date: Date.current, time: Time.current, info: 'Hang out with fellow trans-spectrum people at a quaint Alexandria coffeeshop', name: 'Trans-Coffee')
-Meetup.create_or_find_by(id: 1, category_id: 1, lat: 38.900497, lon: -77.007507,location: 'Washington DC', date: Date.current, time: Time.current, info: 'D.C. LGBTQ+ bar, half off drinks when you bring a friend!', name: 'Lesbian Happy Hour')
-Meetup.create_or_find_by(id: 2, category_id: 2, lat: 40.785091,lon: -73.968285,location: 'New York City, NY', date: Date.current, time: Time.current, info: 'Central park hangout', name: 'Gay Pride Central Park')
+Meetup.create_or_find_by(user_id: 18, id: 0, category_id: 0, lat:38.820450 ,lon:-77.050552 ,location: 'Alexandria,VA', date: Date.current, time: Time.current, info: 'Hang out with fellow trans-spectrum people at a quaint Alexandria coffeeshop', name: 'Trans-Coffee')
+Meetup.create_or_find_by(user_id: 18, id: 1, category_id: 1, lat: 38.900497, lon: -77.007507,location: 'Washington DC', date: Date.current, time: Time.current, info: 'D.C. LGBTQ+ bar, half off drinks when you bring a friend!', name: 'Lesbian Happy Hour')
+Meetup.create_or_find_by(user_id: 18, id: 2, category_id: 2, lat: 40.785091,lon: -73.968285,location: 'New York City, NY', date: Date.current, time: Time.current, info: 'Central park hangout', name: 'Gay Pride Central Park')
 
 # Date.new and Time.new is making test data, not accurate time data
