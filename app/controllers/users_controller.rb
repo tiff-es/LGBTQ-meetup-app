@@ -27,7 +27,6 @@ class UsersController < ApplicationController
     render json: @user
     #byebug
     @user_meetups = @user.meetups
-    byebug
   end
 
   def update
