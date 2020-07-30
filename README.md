@@ -5,7 +5,7 @@
 ### [See Heroku-Hosted Frontend Repository](https://github.com/boostinwrx/lgtbtq-meetups-frontend)
 
  ---
- #### This branch will soon become obsolete and the old front-end repo (which is no longer current, see above link for frontend) will be removed. [**See updated *`repository`* branch in progress.**](https://github.com/boostinwrx/LGBTQ-meetup-app/tree/refactor)
+ #### This branch will soon become obsolete and the old front-end repo (which is no longer current, see above link for frontend) will be removed. [**See updated *`refactor`* branch in progress.**](https://github.com/boostinwrx/LGBTQ-meetup-app/tree/refactor)
  ---
  
  #### App Description:
