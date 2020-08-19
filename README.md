@@ -155,10 +155,6 @@ I truly believe this concept, with some polishing and additional features, can r
 ### Clone
 
 - Fork this repo, then clone to your local machine `https://github.com/fvcproductions/SOMEREPO`
-```shell
-$ brew update
-$ brew install fvcproductions
-```
 
 ### Setup
 
