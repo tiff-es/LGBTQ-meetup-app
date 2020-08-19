@@ -31,11 +31,11 @@ Concept for a safe space for the LGBTQ+ community to create and find social meet
 ---
 
 
-## Repository Structure (updated):
+### Repository Status (updated):
  
 * This repository includes the backend (I've removed the old front-end repository in this branch). For the functional Heroku hosted version, visit: [LGBTQ-Meet Link](https://lgbtq-meetups.herokuapp.com/) 
   
- * [See Heroku-Hosted Frontend Repository](https://github.com/boostinwrx/lgtbtq-meetups-frontend)
+* See Heroku-Hosted [Frontend Repository](https://github.com/boostinwrx/lgtbtq-meetups-frontend)
  
 
 ---
@@ -140,11 +140,36 @@ Simply create an account, and create a custom meetup with a title, description, 
 ---
 
 
-##Contribution: 
+## Contribution: 
 
 Contribution is welcome and stronly encouraged.
 I truly believe this concept, with some polishing and additional features, can really help the LGBTQ+ community connect.
 
+--
+
+## Installation
+
+- All the `code` required to get started
+- Images of what it should look like
+
+### Clone
+
+- Clone this repo to your local machine using `https://github.com/fvcproductions/SOMEREPO`
+
+### Setup
+
+
+```shell
+$ brew update
+$ brew install fvcproductions
+```
+
+> now install npm and bower packages
+
+```shell
+$ npm install
+$ bower install
+```
 
 
 ---
