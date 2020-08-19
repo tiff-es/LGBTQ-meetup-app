@@ -1,17 +1,49 @@
-# LGBTQ+ Meet
-### My Flatiron School Final Project
- 
- ### This repository includes the backend (I've removed the old front-end repository in this branch). For the functional Heroku hosted version, visit: [LGBTQ-Meet Link](https://lgbtq-meetups.herokuapp.com/) 
-### [See Heroku-Hosted Frontend Repository](https://github.com/boostinwrx/lgtbtq-meetups-frontend)
- 
- 
- #### App Description:
-* Finally, a safe space for the LGBTQ+ community to create and find social meetups with gender affirming, supportive people near you!
-  
-* Everyone, no matter their sexual preference or gender identity, are welcome. Here, users can find meetups near them to hang out with like-minded people. Creating a meetup is effortless. Simply create an account, and create a custom meetup with a title, description, map location, date/time, and even a category (ex.transgender/lesbian/non-binary, etc.).
-  
+<img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;" src="https://lh3.googleusercontent.com/ucmjQ_B4mosK1j2LMnwLUJqxAwmIrnRSx8u8sGd5jPazrJMNL3XkjHLs74BKukgkrTIdNgHFja-87v0ta-992EAWB1_azfnqoVbB151IG_nf336bWSBdGMe7sng8spvdyDa4_Er2xL2wyPSrlTbcEeRpQnC-1Vlo_26BDAph05SHU3NTD1GSaQyFvcHEU77dtX7i_xRrP_SNrdMf3dVdbEV3q80CxQurpdyVqdB-kWGvk4ayLjDjJ_6iVKPwzqS5_voTfObXalBpkuOTxlMxeAwb00p71UihNiL5voonXxogNY9uf83jOMlFRdO1Spr75uB-y3gm3rFjoRp-sZIFiaaq_05FkSHOcs5S1cE3C04bu0FXTJO5uwTs_MT4iTZWfRIRkV75l3SiAL1OJspWd5JJ0lDm2H6SNo7w--lJNzbCvLPDRJfkIn_HWcDS27jcO0rnqj66VxifAdTkN24C_yxNvg2iKukkCI08LRdILxm7O_dvdCTKMul9M3OHy5Wuer0snW0QwgeoAkGxmdiCp4pUiQQG5actFW5dWOnMaJYsu8TtJB-6lQKoG8XxZcLwBozKZctksfRSqZO_euo6290IaiYfN9z827sEAg_8D_v3tLXvnvmXvsBsn0aPsgc-iHnHbPxY3DYRL7uyN9h0YP2rg1eKqFmgA3KdcOse9oLLQi15g_5ZLDYl8fwSyg=s1000-no?authuser=0" width="250" height="250">
+
+
+# LGBTQ+ Meetups
+
+> Finally, a safe space for the LGBTQ+ community to create and find social meetups with gender affirming, supportive people near you!
+
+![Netlify Status](https://api.netlify.com/api/v1/badges/a7a68d30-a8d2-4416-b9ef-ca0621a6db11/deploy-status)
+[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger)  [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger)  [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) [![Badges](http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
+
+
+
+
+
+
 ---
-## Technologies Used: 
+
+## Table of Contents
+
+- [About](#about)
+- [Technologies](#technologies)
+- [Sources](#sources)
+- [License](#license)
+- [Contribution]
+
+---
+
+
+## About:
+Concept for a safe space for the LGBTQ+ community to create and find social meetups with gender affirming, supportive people near them.
+
+
+---
+
+
+## Features:
+Everyone, no matter their sexual preference or gender identity, are welcome. sers can find meetups near them to hang out with like-minded people.
+Creating a meetup is effortless. 
+Simply create an account, and create a custom meetup with a title, description, map location (just start tying an address, we'll take it from there), date/time, and a category of meetup (ex.transgender/lesbian/non-binary, etc.).
+
+
+---
+
+
+
+## Technologies: 
 ### Front-end:
 #### JavaScript Frameworks:
 * React
@@ -95,6 +127,41 @@
   * tzinfo-data
   
   *  ruby version (2.6.1p33)
-----
-###### Contact:
-###### For any questions or information about this project feel free to contact me, Tiffany J Abraham, at tifftiff.email@gmail.com.
+
+
+---
+
+
+##Contribution: 
+
+Contribution is welcome and stronly encouraged.
+I truly believe this concept, with some polishing and additional features, can really help the LGBTQ+ community connect.
+
+
+
+---
+
+## Sources
+
+
+[Gatsby Starter: Mate](https://github.com/EmaSuriano/gatsby-starter-mate) starter
+
+*Special-thanks: Huge thanks to [Ema Suriano](https://github.com/EmaSuriano), the creator of the beautifully made SPA Gatsby starter this portolio was built upon, check out [gatsby-starter-mate on GitHub](https://github.com/EmaSuriano/gatsby-starter-mate).*
+
+Refer to Gatsby Starter: Mate for installation instructions:
+* [Mate Starter README](https://github.com/EmaSuriano/gatsby-starter-mate/blob/master/README.md) 
+
+---
+
+## License
+
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+
+- **[MIT license](http://opensource.org/licenses/mit-license.php)**
+# LGBTQ+ Meet
+### My Flatiron School Final Project
+ 
+ ### This repository includes the backend (I've removed the old front-end repository in this branch). For the functional Heroku hosted version, visit: [LGBTQ-Meet Link](https://lgbtq-meetups.herokuapp.com/) 
+### [See Heroku-Hosted Frontend Repository](https://github.com/boostinwrx/lgtbtq-meetups-frontend)
+ 
+ 
