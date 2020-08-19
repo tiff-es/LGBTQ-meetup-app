@@ -5,8 +5,10 @@
 
 > Finally, a safe space for the LGBTQ+ community to create and find social meetups with gender affirming, supportive people near you!
 
-![Netlify Status](https://api.netlify.com/api/v1/badges/a7a68d30-a8d2-4416-b9ef-ca0621a6db11/deploy-status)
-[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger)  [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger)  [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) [![Badges](http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) 
+[![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger)
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) 
 
 
 ---
@@ -145,12 +147,14 @@ Simply create an account, and create a custom meetup with a title, description, 
 Contribution is welcome and stronly encouraged.
 I truly believe this concept, with some polishing and additional features, can really help the LGBTQ+ community connect.
 
---
+
+---
 
 ## Installation
 
-- All the `code` required to get started
-- Images of what it should look like
+- This installation assumes you have a local development environment already setup (Ruby, Rails, npm, bundler, etc.)
+- This also assumes you've already setup a local PostgreSQL server that is currently active ([here's a tutorial that can help otherwise](https://www.robinwieruch.de/postgres-sql-macos-setup))
+
 
 ### Clone Both Repos
 
@@ -177,7 +181,7 @@ $ rails db:migrate
 $ rails db:seed
 ```
 
----
+
 
 ### Front-end Setup
 
