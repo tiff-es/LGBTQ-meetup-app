@@ -9,9 +9,7 @@
 [![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger)  [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger)  [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) [![Badges](http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
 
 
-
-
-
+---
 
 ---
 
@@ -29,6 +27,16 @@
 ## About:
 Concept for a safe space for the LGBTQ+ community to create and find social meetups with gender affirming, supportive people near them.
 
+
+---
+
+
+## Repository Structure (updated):
+ 
+* This repository includes the backend (I've removed the old front-end repository in this branch). For the functional Heroku hosted version, visit: [LGBTQ-Meet Link](https://lgbtq-meetups.herokuapp.com/) 
+  
+ * [See Heroku-Hosted Frontend Repository](https://github.com/boostinwrx/lgtbtq-meetups-frontend)
+ 
 
 ---
 
@@ -160,8 +168,4 @@ Refer to Gatsby Starter: Mate for installation instructions:
 - **[MIT license](http://opensource.org/licenses/mit-license.php)**
 # LGBTQ+ Meet
 ### My Flatiron School Final Project
- 
- ### This repository includes the backend (I've removed the old front-end repository in this branch). For the functional Heroku hosted version, visit: [LGBTQ-Meet Link](https://lgbtq-meetups.herokuapp.com/) 
-### [See Heroku-Hosted Frontend Repository](https://github.com/boostinwrx/lgtbtq-meetups-frontend)
- 
- 
+
