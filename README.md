@@ -152,23 +152,39 @@ I truly believe this concept, with some polishing and additional features, can r
 - All the `code` required to get started
 - Images of what it should look like
 
-### Clone
+### Clone Both Repos
 
-- Fork this repo, then clone to your local machine `https://github.com/fvcproductions/SOMEREPO`
+- Create a directory to hold both the front-end repository, and back-end repository (for convinience)
 
-### Setup
+- Fork, then clone the back-end repo to your local machine `https://github.com/boostinwrx/LGBTQ-meetup-app.git`
 
+- Fork, then clone the back-end repository to your local machine `https://github.com/boostinwrx/lgtbtq-meetups-fronten.git`
+
+
+### Back-end Setup
+
+> Install dependencies
 
 ```shell
-$ brew update
-$ brew install fvcproductions
+$ bundle install
 ```
 
-> now install npm and bower packages
+> Create, migrate, and seed PostgreSQL database
+
+```shell
+$ rails db:create
+$ rails db:migrate
+$ rails db:seed
+```
+
+---
+
+### Front-end Setup
+
+> now install npm dependencies
 
 ```shell
 $ npm install
-$ bower install
 ```
 
 
