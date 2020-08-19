@@ -1,4 +1,6 @@
-# LGBTQ+ Meet
+ <img width='200px' src="https://lh3.googleusercontent.com/pw/ACtC-3eL9FsncUFUdmAWA6DrkjUXHkAZyWIZMWWogORhN5bXjMLH6DJq0ICrvkqoHFFvwpTEWi2XIoPBm7-H5fev3W_HyNuG2e2iWmlZNNsNMB23T3CeVVKtfAoSRisBfpH7AMLPvW2CNykBS7lszVKz-OtJMQ=s1680-no?authuser=0"/>
+
+# LGBTQ+ Meetups
 ### My Flatiron School Final Project
  
  ### This repository includes *both* the frontend, and backend (in their respective directories). For the functional Heroku hosted version, visit: [LGBTQ-Meet Link](https://lgbtq-meetups.herokuapp.com/) 
